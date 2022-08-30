@@ -1,0 +1,13 @@
+body{
+    background-color: #009645;
+}
+
+p {
+  margin-top: 100px;
+  color: white;
+  border-radius: 5px
+}
+
+div {
+  border: 15px solid black;
+}
