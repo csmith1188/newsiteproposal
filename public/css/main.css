@@ -4,13 +4,13 @@ body {
 }
 
 button {
-  position: relative; bottom: -150px;
+  position: relative; bottom: 0px;
   background-color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 10px;
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 100px;
 }
 
 h1 {
@@ -23,10 +23,24 @@ h1 {
   width: 500px;
 }
 
+h2 {
+  position: relative; right: -1200px;
+}
+
+
+
 p {
   border: solid;
   width: 150px;
   height: 50px;
   display: inline;
   position: relative; bottom:-175px;
+}
+
+
+canvas {
+  float: right;
+  position: relative; top: -1200px;
+  border-radius: 25px;
+
 }
