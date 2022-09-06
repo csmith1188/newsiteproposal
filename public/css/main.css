@@ -37,10 +37,7 @@ p {
   position: relative; bottom:-175px;
 }
 
-
-canvas {
+.mainInfo {
   float: right;
   position: relative; top: -1200px;
-  border-radius: 25px;
-
 }
