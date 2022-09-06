@@ -1,0 +1,14 @@
+body {
+    background-color: #009645;
+
+}
+
+button {
+  position: relative; bottom: 0px;
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  width: 200px;
+  height: 100px;
+}
