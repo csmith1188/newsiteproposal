@@ -1,6 +1,6 @@
 body {
     background-color: #009645;
-
+    York County School of Technology
 }
 
 button {
@@ -9,6 +9,16 @@ button {
   border: none;
   border-radius: 25px;
   padding: 10px;
-  width: 200px;
-  height: 100px;
+  width: 100px;
+  height: 50px;
+}
+
+h1 {
+  color: white;
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  border-length: 10px;
+  width: 500px;
 }

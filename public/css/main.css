@@ -24,9 +24,9 @@ h1 {
 }
 
 h2 {
-  position: relative; right: -1200px;
+  float: right;
+  position: relative; right: 230px;
 }
-
 
 
 p {
@@ -39,5 +39,10 @@ p {
 
 .mainInfo {
   float: right;
-  position: relative; top: -1200px;
+  position: relative; top: -450px;
+}
+
+iframe {
+  position: relative; top: -100px;
+  float: right;
 }
