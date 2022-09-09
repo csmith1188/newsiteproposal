@@ -1,12 +1,15 @@
 const express = require('express');
 app = express()
+//sets ejs as view engine
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 
+//port
 const port = 8080
+//ip
 const ip = '127.0.0.1'
 
-
+//endpoints
 app.get('/', function(req,res){
   res.render('index.ejs')
 })
@@ -39,6 +42,8 @@ app.get('/staff', function(req,res){
   res.render('staff.ejs')
 })
 
+
+//starts listen server
 app.listen(port, ip, function(){
   console.log("Site Is Functional");
 })
