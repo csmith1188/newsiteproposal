@@ -42,71 +42,71 @@ app.get('/staff', function(req,res){
   res.render('staff.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/schoology', function(req,res){
   res.render('schoology.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/purchase_uniforms', function(req,res){
   res.render('purchaseuniforms.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/skyward', function(req,res){
   res.render('skyward.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/pictures', function(req,res){
   res.render('prestiegePortraits.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/enlglish', function(req,res){
   res.render('specialReleaseEnglish.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/spanish', function(req,res){
   res.render('specialReleaseSpanish.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/destiny_books', function(req,res){
   res.render('destinyDiscoverBooks.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/database_useage', function(req,res){
   res.render('databaseUsage.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/destiny_web', function(req,res){
   res.render('destinyDiscoverWebsites.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/nocti_testing', function(req,res){
   res.render('noctiTesting.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/techtips', function(req,res){
   res.render('studentTechTipVideos.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/primary_sources', function(req,res){
   res.render('recommendedPrimarySources.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/quickguide', function(req,res){
   res.render('quickTechGuide.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/family_access', function(req,res){
   res.render('qmlativeFamilyAccess.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/database', function(req,res){
   res.render('database.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/catalouge', function(req,res){
   res.render('ycstCatalogue.ejs')
 })
 
-app.get('/staff', function(req,res){
+app.get('/powerlibrary', function(req,res){
   res.render('powerLibary.ejs')
 })
 
