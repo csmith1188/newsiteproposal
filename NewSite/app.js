@@ -163,6 +163,13 @@ app.get('/deleteAccount', function (request, response) {
 })
 
 
+// app.get('/mediacenter/mediacenter', function(request, response){
+//   response.render('/mediacenter/mediacenter.ejs')
+// })
+
+
+
+
 app.listen(port, function (err) {
   if (err) {
     console.error(err);
