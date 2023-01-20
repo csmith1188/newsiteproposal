@@ -163,9 +163,6 @@ app.get('/deleteAccount', function (request, response) {
 })
 
 
-// app.get('/mediacenter/mediacenter', function(request, response){
-//   response.render('/mediacenter/mediacenter.ejs')
-// })
 
 
 
