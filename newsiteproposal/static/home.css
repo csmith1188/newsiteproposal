@@ -1,16 +1,13 @@
 h1 {
     float : left;
     border: 3px;
-    border-style: solid;
-    border-color: #009645;
-    border-radius: 15px;
     margin-top: 40px;
     margin-left: 15px;
 }
 
 .info {
     border-style: solid;
-    border-radius: 15px;
+    border-radius: 5px;
     border-color: #009645;
     float:right;
     padding: 30px;
@@ -21,7 +18,20 @@ h1 {
 .mainButtons{
     float: left;
     margin-top: 200px;
+    margin-right: 1300px;
 }
+
+.submitButton{
+    text-align: center;
+    width: 100px;
+    border-radius: 25px;
+    border: none;
+    background-color:  #009645;
+    
+}
+
+
+
 
 
 img {
