@@ -1,0 +1,22 @@
+.header-container {
+    background-color: #009645;
+    padding: 18px;
+    padding-bottom: 70;
+    
+}
+
+.header-img {
+    float: left;
+}
+
+.header-h1 {
+        float : left;
+        border: 3px;
+        border-style: solid;
+        border-color: #009645;
+        border-radius: 15px;
+        margin-top: 40px;
+        margin-left: 15px;
+}
+
+
