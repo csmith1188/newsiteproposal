@@ -19,4 +19,18 @@
         margin-left: 15px;
 }
 
+.header-links {
+    text-align: right;
+    float: right;
+}
+
+a:link {
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
 
