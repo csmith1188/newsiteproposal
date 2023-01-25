@@ -1,0 +1,30 @@
+h1 {
+    float : left;
+    border: 3px;
+    border-style: solid;
+    border-color: #009645;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.info {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #009645;
+    float:right;
+    padding: 30px;
+    margin: 30px;
+    width: 250px;
+}
+
+.mainButtons{
+    float: left;
+    margin-top: 200px;
+}
+
+
+img {
+    float: left
+}
+
