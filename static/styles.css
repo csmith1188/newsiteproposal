@@ -22,6 +22,9 @@
 .header-links {
     text-align: right;
     float: right;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 
 a:link {
