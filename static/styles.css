@@ -1,0 +1,34 @@
+.Welcome {
+    text-align: center;
+    text-decoration: underline;
+    font-size: x-large;
+}
+.infoiaccess {
+width: 700px;
+text-align: center;
+font-size: large;
+}
+
+.wheredoiaccess {
+    width: 700px;
+text-align: center;
+font-size: large;
+}
+
+.gainaccess {
+    width: 700px;
+    text-align: center;
+    font-size: large;
+}
+
+#gainaccessinfo {
+font-size: medium;
+}
+
+#wheredoiaccessinfo {
+font-size: medium;
+}
+
+#infoiaccessinfo {
+    font-size: medium;
+}
