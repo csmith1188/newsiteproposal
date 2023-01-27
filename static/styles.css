@@ -1,4 +1,41 @@
+
 /* header Styles */
+
+.Welcome {
+    text-align: center;
+    text-decoration: underline;
+    font-size: x-large;
+}
+.infoiaccess {
+width: 700px;
+text-align: center;
+font-size: large;
+}
+
+.wheredoiaccess {
+    width: 700px;
+text-align: center;
+font-size: large;
+}
+
+.gainaccess {
+    width: 700px;
+    text-align: center;
+    font-size: large;
+}
+
+#gainaccessinfo {
+font-size: medium;
+}
+
+#wheredoiaccessinfo {
+font-size: medium;
+}
+
+#infoiaccessinfo {
+    font-size: medium;
+}
+
 .header-container {
     background-color: #009645;
     
@@ -92,4 +129,5 @@ footer {
 .social-media::before {
     content: "";
     flex-grow: 1; /* This will make the spacer take up all the available space */
+
 }
