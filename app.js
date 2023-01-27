@@ -16,6 +16,10 @@ app.get('/', function (req,res) {
     res.render('home')
 })
 
+app.get('/mc', function (req,res) {
+    res.send('Change in future with actual Media Center Document')
+})
+
 app.listen(port, function () {
     console.log("Listening on port " + port)
 })

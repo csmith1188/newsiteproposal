@@ -1,7 +1,7 @@
 .header-container {
     background-color: #009645;
-    padding: 18px;
-    padding-bottom: 70;
+    
+    padding-bottom: 22px;
     
 }
 
@@ -17,6 +17,7 @@
         border-radius: 15px;
         margin-top: 40px;
         margin-left: 15px;
+        padding-top: 50px
 }
 
 .header-links {
@@ -37,3 +38,13 @@ a:hover {
     text-decoration: underline;
 }
 
+a:visited {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.header-pages {
+    background-color: gray;
+    text-align: center;
+    
+}
