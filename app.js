@@ -11,10 +11,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./static'))
 var port = 1010
 
+
+app.get('/', function (req,res) {
+    res.render('home')
+})
+
 app.get('/parents', function (req,res) {
     res.render('parents.ejs')
 })
     
+
+app.get('/mc', function (req,res) {
+    res.send('Change in future with actual Media Center Document')
+})
+
 app.listen(port, function () {
     console.log("Listening on port " + port)
 })
