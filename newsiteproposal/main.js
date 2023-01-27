@@ -22,7 +22,9 @@ app.get('/MediaCenter', function(req,res){
     res.render('MediaCenter/mediaCenter.ejs')
 })
 
-
+app.get('/test', function(req,res){
+    res.render('index.ejs')
+})
 
 app.listen(port, function () {
     console.log("Listening on port " + port)
