@@ -1,7 +1,9 @@
+/* header Styles */
 .header-container {
     background-color: #009645;
     
     padding-bottom: 22px;
+    padding-top:1px;
     
 }
 
@@ -48,6 +50,7 @@ a:visited {
     text-align: center;
 }
 
+/* body Styles */
 body {
     margin: 0;
 }
