@@ -1,11 +1,4 @@
 {
-
-  "dependencies": {
-    "body-parser": "^1.20.1",
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "path": "^0.12.7"
-}
   "name": "newsiteproposal",
   "version": "1.0.0",
   "description": "A new site to replace the current Ytech website",
@@ -24,9 +17,10 @@
     "url": "https://github.com/TFloto/newsiteproposal/issues"
   },
   "homepage": "https://github.com/TFloto/newsiteproposal#readme",
-
   "dependencies": {
+    "body-parser": "^1.20.1",
     "ejs": "^3.1.8",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "path": "^0.12.7"
   }
 }
