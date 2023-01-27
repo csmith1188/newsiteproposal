@@ -1,10 +1,16 @@
 button {
     width: 150px;
     height: 50px;
+    background-color: #009645;
+    border: none;
+    border-radius: 5px;
 }
 .mainButtons {
     margin-top: 100px;
+    
 }
+
+
 
 
 
@@ -13,7 +19,7 @@ button {
 .mission {
     border: 3px;
     border-style: solid;
-    border-color: black;
+    border-color: #009645;
     border-radius: 5px;
 
     width: 650px;
@@ -29,7 +35,7 @@ button {
 
     border: 3px;
     border-style: solid;
-    border-color: black;
+    border-color: #009645;
     border-radius: 5px;
 
     float: right;
@@ -46,7 +52,7 @@ button {
 
     border-style: solid;
     border: 3px;
-    border-color: black;
+    border-color: #009645;
     border-radius: 5px;
 }
 
