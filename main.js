@@ -22,9 +22,7 @@ app.get('/MediaCenter', function(req,res){
     res.render('MediaCenter/mediaCenter.ejs')
 })
 
-app.get('/test', function(req,res){
-    res.render('index.ejs')
-})
+
 
 
 
