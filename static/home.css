@@ -9,8 +9,9 @@ button {
     margin-top: 100px;
     
 }
-
-
+button:hover{
+    background-color: #01ca5f;
+}
 
 
 
@@ -46,12 +47,11 @@ button {
 .quickLinks {
     float: right;
     margin-top: -550px;
-    margin-right: 85px;
     text-align:center;
+    width: 250px;
 
-
-    border-style: solid;
     border: 3px;
+    border-style: solid;
     border-color: #009645;
     border-radius: 5px;
 }
