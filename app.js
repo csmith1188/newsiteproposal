@@ -13,7 +13,7 @@ var port = 1010
 
 
 app.get('/', function (req,res) {
-    res.render('home')
+    res.render('home.ejs')
 })
 
 app.get('/parents', function (req,res) {
