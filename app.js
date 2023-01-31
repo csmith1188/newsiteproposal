@@ -21,8 +21,8 @@ app.get('/parents', function (req,res) {
 })
     
 
-app.get('/mc', function (req,res) {
-    res.send('Change in future with actual Media Center Document')
+app.get('/mediaCenter', function (req,res) {
+    res.render('mediaCenter.ejs')
 })
 
 app.listen(port, function () {
