@@ -1,0 +1,1 @@
+npm install express && npm install ejs && node app.js
