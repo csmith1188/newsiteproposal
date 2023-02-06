@@ -8,6 +8,10 @@
     float: right;
     text-align: center;
     width: 250px;
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: white
 }
 
 
@@ -17,6 +21,7 @@
     border: 3px;
     border-style: solid;
     border-color: black;
+    margin-top: 100px;
     margin-bottom: 315px;
 
 }
