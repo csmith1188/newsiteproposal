@@ -1,23 +1,33 @@
 .whyUs {
-
     text-align: center;
-
+    width: 400px;
 }
 
 
 .announcements {
+    float: right;
     text-align: center;
-    
+    width: 250px;
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: white
 }
 
 
 .quickLinks {
     text-align: center;
     width: 150px;
-    
-
     border: 3px;
     border-style: solid;
     border-color: black;
+    margin-top: 100px;
+    margin-bottom: 315px;
 
+}
+
+.mainInfo {
+    float: left;
+    text-align: center;
+    width: 250px;
 }
