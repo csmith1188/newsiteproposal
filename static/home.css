@@ -5,29 +5,28 @@
 
 
 .announcements {
-    float: right;
     text-align: center;
     width: 250px;
     border: 3px;
     border-style: solid;
-    border-color: black;
-    background-color: white
+    border-color: #00953B;
+    background-color: #00953B
 }
 
 
 .quickLinks {
     text-align: center;
-    width: 150px;
+    width: 250px;
     border: 3px;
     border-style: solid;
-    border-color: black;
-    margin-top: 100px;
     margin-bottom: 315px;
-
+    border-color: #00953B;
+    background-color: #00953B
 }
 
 .mainInfo {
-    float: left;
     text-align: center;
     width: 250px;
+    border-color: #00953B;
+    background-color: #00953B;
 }
