@@ -1,0 +1,133 @@
+
+/* header Styles */
+
+.Welcome {
+    text-align: center;
+    text-decoration: underline;
+    font-size: x-large;
+}
+.infoiaccess {
+width: 700px;
+text-align: center;
+font-size: large;
+}
+
+.wheredoiaccess {
+    width: 700px;
+text-align: center;
+font-size: large;
+}
+
+.gainaccess {
+    width: 700px;
+    text-align: center;
+    font-size: large;
+}
+
+#gainaccessinfo {
+font-size: medium;
+}
+
+#wheredoiaccessinfo {
+font-size: medium;
+}
+
+#infoiaccessinfo {
+    font-size: medium;
+}
+
+.header-container {
+    background-color: #009645;
+    
+    padding-bottom: 22px;
+    padding-top:1px;
+    
+}
+
+.header-img {
+    float: left;
+}
+
+.header-h1 {
+        float : left;
+        border: 3px;
+        border-style: solid;
+        border-color: #009645;
+        border-radius: 15px;
+        margin-top: 40px;
+        margin-left: 15px;
+        padding-top: 50px
+}
+
+.header-links {
+    text-align: right;
+    float: right;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+a:link {
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.header-pages {
+    background-color: gray;
+    text-align: center;
+}
+
+/* body Styles */
+body {
+    margin: 0;
+}
+
+
+/* Footer Styles */
+footer {
+    display: flex;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    flex-direction: row;
+    flex: 1; /* This will make the text-container take up all the available space */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media{ 
+    margin-left: auto; /* This will push the social-media class to the right */
+    float:right;
+    display: flex;
+    flex-direction: row;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.social-media::before {
+    content: "";
+    flex-grow: 1; /* This will make the spacer take up all the available space */
+
+}
