@@ -110,9 +110,11 @@ footer {
 
 .social-media{ 
     margin-left: auto; /* This will push the social-media class to the right */
+    height: 150px;
     float:right;
     display: flex;
     flex-direction: row;
+    vertical-align: middle;
 }
 
 .text-container {
@@ -121,9 +123,9 @@ footer {
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
-    margin-right: 10px;
+    max-width: 10%;
+    height: auto;
+    width: auto;
 }
 
 .social-media::before {
