@@ -136,3 +136,39 @@ footer {
     flex-grow: 1; /* This will make the spacer take up all the available space */
 
 }
+
+
+
+/* main page */
+.whyUs {
+    text-align: center;
+    width: 400px;
+}
+
+
+.announcements {
+    text-align: center;
+    width: 250px;
+    border: 3px;
+    border-style: solid;
+    border-color: #00953B;
+    background-color: #00953B
+}
+
+
+.quickLinks {
+    text-align: center;
+    width: 250px;
+    border: 3px;
+    border-style: solid;
+    margin-bottom: 315px;
+    border-color: #00953B;
+    background-color: #00953B
+}
+
+.mainInfo {
+    text-align: center;
+    width: 250px;
+    border-color: #00953B;
+    background-color: #00953B;
+}
