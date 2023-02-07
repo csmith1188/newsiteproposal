@@ -27,6 +27,13 @@ app.get('/parents', function (req,res) {
     res.render('parents.ejs')
 })
     
+app.get('/it', function (req,res) {
+    res.render('IT_shop.ejs')
+})
+
+app.get('/career', function (req,res) {
+    res.render('career_programs.ejs')
+})
 
 
 //media center
