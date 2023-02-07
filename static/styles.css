@@ -23,6 +23,40 @@ font-size: large;
     font-size: large;
 }
 
+.four_it_shops {
+    width: 700px;
+    text-align: center;
+    font-size: large;
+}
+
+.whatwillilearn_it {
+    width: 700px;
+    text-align: center;
+    font-size: large;
+}
+
+.list_of_options {
+    font-size: large;
+}
+
+.Career_welcome {
+text-decoration: underline;
+font-size: x-large;
+}
+
+#Career_welcome_opening {
+    font-size: large;
+}
+
+#moreit_info {
+    font-size: large;
+}
+
+#four_it_shops {
+    font-size: medium;
+    
+}
+
 #gainaccessinfo {
 font-size: medium;
 }
@@ -137,8 +171,6 @@ footer {
 
 }
 
-
-
 /* main page */
 .whyUs {
     text-align: center;
@@ -172,3 +204,4 @@ footer {
     border-color: #00953B;
     background-color: #00953B;
 }
+
