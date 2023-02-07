@@ -20,6 +20,13 @@ app.get('/parents', function (req,res) {
     res.render('parents.ejs')
 })
     
+app.get('/it', function (req,res) {
+    res.render('IT_shop.ejs')
+})
+
+app.get('/career', function (req,res) {
+    res.render('career_programs.ejs')
+})
 
 app.get('/mc', function (req,res) {
     res.send('Change in future with actual Media Center Document')
