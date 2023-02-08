@@ -141,25 +141,27 @@ body {
 /* Footer Styles */
 footer {
     display: flex;
-    background-color: #636569;
-    color: #ffffff;
+    background-color: #333;
+    color: #fff;
     padding: 10px;
     flex-direction: row;
     flex: 1; /* This will make the text-container take up all the available space */
 }
 
-.flex-container {
-    box-sizing: border-box;
-    width: 50%;
-    clear: both;
-    display: table;
+.text-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .social-media{ 
     margin-left: auto; /* This will push the social-media class to the right */
+
+    height: 150px;
     float:right;
     display: flex;
     flex-direction: row;
+    vertical-align: middle;
+
 }
 
 .text-container {
@@ -168,47 +170,11 @@ footer {
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
-    margin-right: 10px;
-}
+    max-width: 10%;
+    height: auto;
+    width: auto;
+
 
 .social-media::before {
     content: "";
     flex-grow: 1; /* This will make the spacer take up all the available space */
-
-}
-
-/* main page */
-.whyUs {
-    text-align: center;
-    width: 400px;
-}
-
-
-.announcements {
-    text-align: center;
-    width: 250px;
-    border: 3px;
-    border-style: solid;
-    border-color: #00953B;
-    background-color: #00953B
-}
-
-
-.quickLinks {
-    text-align: center;
-    width: 250px;
-    border: 3px;
-    border-style: solid;
-    margin-bottom: 315px;
-    border-color: #00953B;
-    background-color: #00953B
-}
-
-.mainInfo {
-    text-align: center;
-    width: 250px;
-    border-color: #00953B;
-    background-color: #00953B;
-}
