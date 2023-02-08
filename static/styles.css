@@ -37,7 +37,8 @@ font-size: medium;
 }
 
 .header-container {
-    background-color: #009645;
+    background-color: #00953b;
+
     
     padding-bottom: 22px;
     padding-top:1px;
@@ -96,40 +97,16 @@ body {
 /* Footer Styles */
 footer {
     display: flex;
-    background-color: #333;
-    color: #fff;
+    background-color: #636569;
+    color: #ffffff;
     padding: 10px;
     flex-direction: row;
     flex: 1; /* This will make the text-container take up all the available space */
 }
 
-.text-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.social-media{ 
-    margin-left: auto; /* This will push the social-media class to the right */
-    height: 150px;
-    float:right;
-    display: flex;
-    flex-direction: row;
-    vertical-align: middle;
-}
-
-.text-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo {
-    max-width: 10%;
-    height: auto;
-    width: auto;
-}
-
-.social-media::before {
-    content: "";
-    flex-grow: 1; /* This will make the spacer take up all the available space */
-
+.flex-container {
+    box-sizing: border-box;
+    width: 50%;
+    clear: both;
+    display: table;
 }
