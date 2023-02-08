@@ -27,23 +27,26 @@
 
         <script>
         let headerLinks = document.getElementsByClassName('header-page')
-        let winWidth = window.innerWidth
         console.log(headerLinks.length)
 
-        for (let i = 0; i < headerLinks.length; i++) {
+        function winSize() {
+            let winWidth = window.innerWidth
+
+
+            for (let i = 0; i < headerLinks.length; i++) {
             const links = headerLinks[i];
 
             if (i != headerLinks.length - 1) {
                 links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; color: #fff;`)
-                console.log((winWidth / headerLinks.length) / 2)   
+                console.log((winWidth / headerLinks.length) / 3)   
             } else if (i == headerLinks.length - 1) {
                 links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; border-right: 1px solid; color: #fff;`)
-                console.log((winWidth / headerLinks.length) / 2)  
+                console.log((winWidth / headerLinks.length) / 3)  
             }
-
-
                      
         }
+        }
+        setInterval(winSize, 1)
         </script>
     </body>
 </html>
