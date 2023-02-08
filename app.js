@@ -43,7 +43,7 @@ app.get('/mediaCenter', function (req,res) {
 
 
 //athletics
-app.get('/athletics/home', function(req,res){
+app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
 })
 
