@@ -15,13 +15,34 @@
             </div>
         </div>
         <div class="header-pages">
-
-            <a href="/" style="color: black; padding-left: 10px; padding-right: 10px; border-left: 1px solid; color: #fff;">Home</a>
-            <a href="/mediaCenter" style="color: black; padding-left: 10px; padding-right: 10px; border-left: 1px solid; color: #fff;">Media Center</a>
-            <a href="/parents" style="color: black; padding-left: 10px; padding-right: 10px; border-left: 1px solid; border-right: 1px solid; color: #fff;">Parents And Caregivers</a>
-            <a href="/career" style="color: black; padding-left: 10px; padding-right: 10px; border-left: 1px solid; border-right: 1px solid; color: #fff;">Career Options For Students</a>
-            
-
+            <a href="/" class="header-page">Home</a>
+            <a href="/mediaCenter" class="header-page">Media Center</a>
+            <a href="/parents" class="header-page">Parents And Caregivers</a>
+            <a href="/test" class="header-page">Test</a>
         </div>
+
+        <script>
+        let headerLinks = document.getElementsByClassName('header-page')
+        console.log(headerLinks.length)
+
+        function winSize() {
+            let winWidth = window.innerWidth
+
+
+            for (let i = 0; i < headerLinks.length; i++) {
+            const links = headerLinks[i];
+
+            if (i != headerLinks.length - 1) {
+                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; color: #fff;`)
+                console.log((winWidth / headerLinks.length) / 3)   
+            } else if (i == headerLinks.length - 1) {
+                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; border-right: 1px solid; color: #fff;`)
+                console.log((winWidth / headerLinks.length) / 3)  
+            }
+                     
+        }
+        }
+        setInterval(winSize, 1)
+        </script>
     </body>
 </html>
