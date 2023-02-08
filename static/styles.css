@@ -69,12 +69,16 @@ font-size: medium;
     font-size: medium;
 }
 
+
+
 /* header Styles */
 
 
 .header-container {
     background-color: #009645;
     padding-bottom: 150px;
+
+    
     padding-top:1px;
     padding-left: 10px;
     
@@ -85,6 +89,7 @@ font-size: medium;
     padding-right: 10px;
     padding-top: 10px;
 }
+
 
 
 .header-links {
@@ -102,6 +107,11 @@ font-size: medium;
     margin-left: 15px;
     padding-top: 20px;
 }
+
+
+
+
+
 
 
 a:link {
