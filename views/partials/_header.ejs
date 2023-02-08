@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="header-container">
@@ -20,11 +21,11 @@
             <a href="/parents" class="header-page">Parents And Caregivers</a>
             <a href="/athletics" class="header-page">Spartan Athletics</a>
             <a href="/career" class="header-page">Career Programs</a>
+
         </div>
 
         <script>
         let headerLinks = document.getElementsByClassName('header-page')
-        console.log(headerLinks.length)
 
         function winSize() {
             let winWidth = window.innerWidth
@@ -35,10 +36,8 @@
 
             if (i != headerLinks.length - 1) {
                 links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; color: #fff;`)
-                console.log((winWidth / headerLinks.length) / 3)   
             } else if (i == headerLinks.length - 1) {
                 links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; border-right: 1px solid; color: #fff;`)
-                console.log((winWidth / headerLinks.length) / 3)  
             }
                      
         }
