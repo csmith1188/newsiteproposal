@@ -18,21 +18,30 @@
             <a href="/" class="header-page">Home</a>
             <a href="/mediaCenter" class="header-page">Media Center</a>
             <a href="/parents" class="header-page">Parents And Caregivers</a>
+            <a href="/test" class="header-page">Test</a>
+
+
+
 
         </div>
 
         <script>
         let headerLinks = document.getElementsByClassName('header-page')
+        let winWidth = window.innerWidth
+        console.log(headerLinks.length)
 
         for (let i = 0; i < headerLinks.length; i++) {
+            const links = headerLinks[i];
 
             if (i != headerLinks.length - 1) {
-                const links = headerLinks[i];
-                links.setAttribute("style", "padding-left: 10px; padding-right: 10px; border-left: 1px solid; color: #fff;")   
+                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; color: #fff;`)
+                console.log((winWidth / headerLinks.length) / 2)   
             } else if (i == headerLinks.length - 1) {
-                const links = headerLinks[i];
-                links.setAttribute("style", "padding-left: 10px; padding-right: 10px; border-left: 1px solid; border-right: 1px solid; color: #fff;")  
+                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; border-right: 1px solid; color: #fff;`)
+                console.log((winWidth / headerLinks.length) / 2)  
             }
+
+
                      
         }
         </script>
