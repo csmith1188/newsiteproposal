@@ -42,6 +42,13 @@ app.get('/mediaCenter', function (req,res) {
 })
 
 
+//athletics
+app.get('/athletics/home', function(req,res){
+    res.render('athleticsHome.ejs')
+})
+
+
+
 //listen server
 app.listen(port, function () {
     console.log("Listening on port " + port)
