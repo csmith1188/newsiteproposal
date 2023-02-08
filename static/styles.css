@@ -69,12 +69,13 @@ font-size: medium;
     font-size: medium;
 }
 
+
+
 /* header Styles */
 
 
 .header-container {
     background-color: #009645;
-    
     padding-bottom: 42px;
     padding-top:1px;
     padding-left: 10px;
@@ -86,13 +87,7 @@ font-size: medium;
     padding-right: 10px;
 }
 
-.header-h1 {
-    float: left;
-    margin-top: 40px;
-    margin-left: 15px;
-    padding-top: 50px;
-          
-}
+
 
 .header-links {
     text-align: right;
@@ -102,6 +97,16 @@ font-size: medium;
     right: 15px;
     
 }
+
+.header-h1 {
+            float: left;
+            margin-top: 40px;
+            margin-left: 15px;
+            padding-top: 50px;
+}
+
+
+
 
 
 a:link {
