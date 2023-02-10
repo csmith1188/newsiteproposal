@@ -153,6 +153,12 @@ footer {
     font-family: helvetica;
 }
 
+/* that one single hyperlink in the footer */
+footer a {
+    background-color: #333333;
+    color: #ffffff;
+}
+
 .flex-container {
     box-sizing: border-box;
     flex-direction: row;
