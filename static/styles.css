@@ -12,7 +12,7 @@ font-size: large;
 }
 
 .wheredoiaccess {
-    width: 700px;
+width: 700px;
 text-align: center;
 font-size: large;
 }
@@ -37,6 +37,10 @@ font-size: large;
 
 .list_of_options {
     font-size: large;
+}
+
+.list_of_options.p{
+    text-align: left;
 }
 
 .Career_welcome {
