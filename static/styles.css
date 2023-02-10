@@ -126,7 +126,7 @@ a:visited {
 }
 
 .header-pages {
-    background-color: #333;
+    background-color: #333333;
     text-align: center;
     
     
@@ -141,16 +141,26 @@ body {
 /* Footer Styles */
 footer {
     display: flex;
-    background-color: #636569;
+    background-color: #333333;
     color: #ffffff;
     padding: 10px;
     flex-direction: row;
     flex: 1; /* This will make the text-container take up all the available space */
+    font-family: helvetica;
 }
 
-.text-container {
+.flex-container {
     box-sizing: border-box;
-    width: 50%;
+    flex-direction: row;
+    width: 300px;
+    margin:auto;
     clear: both;
     display: table;
+    text-align:center;
 }
+
+@media (max-width: 600px) {
+    footer {
+      flex-direction: column;
+    }
+  }
