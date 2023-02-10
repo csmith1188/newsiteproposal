@@ -6,7 +6,7 @@
     <body>
         <div class="header-container">
             <div>
-                <img class="header-img" src="imgs\Spart.png" alt="">
+                <a href="/"><input type="image" class="header-img" src="imgs\Spart.png"> </a>
                 <h1 class="header-h1">York County School Of Technology</h1>
             </div>
 
@@ -19,10 +19,6 @@
             <a href="/" class="header-page">Home</a>
             <a href="/parents" class="header-page">Parents And Caregivers</a>
             <a href="/athletics" class="header-page">Spartan Athletics</a>
-
-
-
-
             <a href="/career" class="header-page">Career Programs</a>
 
         </div>
@@ -36,11 +32,13 @@
 
             for (let i = 0; i < headerLinks.length; i++) {
             const links = headerLinks[i];
+            let wordLen = links.offsetWidth
 
             if (i != headerLinks.length - 1) {
-                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; color: #fff;`)
+                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 5}px; padding-right: ${(winWidth / headerLinks.length) / 5}px; border-left: 1px solid; color: #fff;`)
             } else if (i == headerLinks.length - 1) {
-                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 3}px; padding-right: ${(winWidth / headerLinks.length) / 3}px; border-left: 1px solid; border-right: 1px solid; color: #fff;`)
+                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 5}px; padding-right: ${(winWidth / headerLinks.length) / 5}px; border-left: 1px solid; border-right: 1px solid; color: #fff;`)
+
             }
                      
         }
