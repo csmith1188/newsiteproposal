@@ -35,9 +35,9 @@
             let wordLen = links.offsetWidth
 
             if (i != headerLinks.length - 1) {
-                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 5}px; padding-right: ${(winWidth / headerLinks.length) / 5}px; border-left: 1px solid; color: #fff;`)
+                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / headerLinks.length}px; padding-right: ${(winWidth / headerLinks.length) / headerLinks.length}px; border-left: 1px solid; color: #fff;`)
             } else if (i == headerLinks.length - 1) {
-                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / 5}px; padding-right: ${(winWidth / headerLinks.length) / 5}px; border-left: 1px solid; border-right: 1px solid; color: #fff;`)
+                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / headerLinks.length}px; padding-right: ${(winWidth / headerLinks.length) / headerLinks.length}px; border-left: 1px solid; border-right: 1px solid; color: #fff;`)
 
             }
                      
