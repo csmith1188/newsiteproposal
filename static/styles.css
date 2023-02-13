@@ -12,7 +12,7 @@ font-size: large;
 }
 
 .wheredoiaccess {
-    width: 700px;
+width: 700px;
 text-align: center;
 font-size: large;
 }
@@ -37,6 +37,10 @@ font-size: large;
 
 .list_of_options {
     font-size: large;
+}
+
+.list_of_options.p{
+    text-align: left;
 }
 
 .Career_welcome {
@@ -120,7 +124,7 @@ a:link {
 }
 
 a:hover {
-    background-color: transparent;
+    background-color: #095540;
     text-decoration: underline;
 }
 
@@ -173,6 +177,28 @@ footer a {
 @media (max-width: 600px) {
     footer {
       flex-direction: column;
+    }
+
+    
+  }
+
+  @media (max-width: 646px) {
+    .header-h1 {
+        padding-top: 10px;
+        margin-top: 20px;
+        margin-left: 7px;
+        font-size: 3vw;
+
+    }
+    .header-img {
+        padding-top: 5px;
+        padding-right: 5px;
+        width: 11vw;
+    }
+    .header-container {
+        padding-bottom: 75px;
+        padding-top: .5px;
+        padding-left: 5px;
     }
   }
 
