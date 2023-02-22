@@ -265,17 +265,9 @@ footer {
 }   
 
 
-a {
-    color: white
-}
 
 
 /* athletics home page */
 .general {
-    border: 3px;
-    border-style: solid;
-    border-color: #00953B;
-    background-color: #00953B;
-
-    width: 400px;
+    
 }
