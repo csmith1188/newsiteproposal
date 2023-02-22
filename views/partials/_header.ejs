@@ -1,4 +1,4 @@
-<html>
+<header class="header">
     <head>
         <link rel="stylesheet" href="styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,27 +23,5 @@
 
         </div>
 
-        <script>
-        let headerLinks = document.getElementsByClassName('header-page')
-
-        function winSize() {
-            let winWidth = window.innerWidth
-
-
-            for (let i = 0; i < headerLinks.length; i++) {
-            const links = headerLinks[i];
-            let wordLen = links.offsetWidth
-
-            if (i != headerLinks.length - 1) {
-                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / headerLinks.length}px; padding-right: ${(winWidth / headerLinks.length) / headerLinks.length}px; border-left: 1px solid; color: #fff; margin-left: -5px`)
-            } else if (i == headerLinks.length - 1) {
-                links.setAttribute("style", `padding-left: ${(winWidth / headerLinks.length) / headerLinks.length}px; padding-right: ${(winWidth / headerLinks.length) / headerLinks.length}px; border-left: 1px solid; border-right: 1px solid; color: #fff; margin-left: -5px`)
-
-            }
-                     
-        }
-        }
-        setInterval(winSize, 1)
-        </script>
     </body>
-</html>
+</header>
