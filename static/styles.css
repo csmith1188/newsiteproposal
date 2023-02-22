@@ -1,4 +1,6 @@
-
+a {
+    color: white
+}
 
 .Welcome {
     text-align: center;
@@ -196,6 +198,9 @@ footer {
     }
   }
 
+
+
+
 /* main page */
 .whyUs {
     border: 3px;
@@ -267,7 +272,31 @@ footer {
 
 
 
+
+
+
 /* athletics home page */
-.general {
-    
+.opportunities {
+    width: 600px;
+    border: 3px
+}
+
+.scorevision {
+    width: 600px;
+}
+
+.scorevision a {
+    color: blue;
+}
+
+.banners {
+    width: 600px;
+}
+
+.coaching  {
+    width: 600px;
+}
+
+.coaching a {
+    color: blue;
 }
