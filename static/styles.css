@@ -198,40 +198,76 @@ footer {
 
 /* main page */
 .whyUs {
-    text-align: center;
-    width: 400px;
+    border: 3px;
+    border-color: #00953B;
+    background-color: #00953B;
+    width: 600;
+
+    float: left;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px;
+
+    height: 250px;
 }
 
 
 .announcements {
-    text-align: center;
-    width: 250px;
     border: 3px;
-    border-style: solid;
     border-color: #00953B;
-    background-color: #00953B
+    background-color: #00953B;
+    width: 600;
+
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 300px;
+
 }
 
 
 .quickLinks {
-    text-align: center;
-    width: 250px;
     border: 3px;
-    border-style: solid;
-    margin-bottom: 315px;
     border-color: #00953B;
-    background-color: #00953B
+    background-color: #00953B;
+    width: 600;
+
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+    padding: 10px;
+    margin: 10px;
+    
+
 }
 
 .mainInfo {
-    text-align: center;
-    width: 250px;
+    border: 3px;
     border-color: #00953B;
     background-color: #00953B;
+    width: 600;
+
+    float: right;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px;
+
+    height: 250px;
+
+}   
+
+
+a {
+    color: white
 }
-
-
-
 
 
 /* athletics home page */
