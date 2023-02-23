@@ -4,13 +4,52 @@ var app = express()
 const path = require('path')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
-
+var fs = require('fs');
+const xlsx = require('xlsx');
 
 //settings 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./static'))
+
+function convertExcelFileToJsonUsingXlsx() {
+
+    // Read the file using pathname
+    const file = xlsx.readFileSync('test.xlsx');
+  
+    // Grab the sheet info from the file
+    const sheetNames = file.SheetNames;
+    const totalSheets = sheetNames.length;
+  
+    // Variable to store our data
+    let parsedData = [];
+  
+    // Loop through sheets
+    for (let i = 0; i < totalSheets; i++) {
+  
+        // Convert to json using xlsx
+        const tempData = xlsx.utils.sheet_to_json(file.Sheets[sheetNames[i]]);
+  
+        // Skip header row which is the colum names
+        tempData.shift();
+  
+        // Add the sheet's json to our data array
+        parsedData.push(...tempData);
+    }
+  
+   // call a function to save the data in a json file
+  
+   generateJSONFile(parsedData);
+  }
+
+  function generateJSONFile(data) {
+    try {
+    fs.writeFileSync('data.json', JSON.stringify(data))
+    } catch (err) {
+    console.error(err)
+    }
+ }
 
 //port and ip
 var port = 1010
@@ -60,11 +99,17 @@ app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
 })
 
+//athletics
+app.get('/template', function(req,res){
+    res.render('template.ejs')
+})
+
 
 
 //listen server
 app.listen(port, function () {
     console.log("Listening on port " + port)
+    convertExcelFileToJsonUsingXlsx()
 })
 
 

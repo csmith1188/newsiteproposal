@@ -1,4 +1,6 @@
-
+body {
+    margin: 0;
+}
 
 .Welcome {
     text-align: center;
@@ -73,11 +75,22 @@ font-size: medium;
     font-size: medium;
 }
 
+/*template styles*/
+.text-container{
+    font-family: helvetica;
+}
+.text-container video {
+    width: 80%
+}
 
+
+@media (max-width: 650px) {
+    .text-container video {
+        width: 100%
+    }
+}
 
 /* header Styles */
-
-
 
 .header-container {
     background-color: #00953b;
@@ -150,11 +163,6 @@ a:visited {
     flex: 1 1 0;
 }
 
-/* body Styles */
-body {
-    margin: 0;
-}
-
 
 /* Footer Styles */
 footer {
@@ -167,6 +175,12 @@ footer {
     font-family: helvetica;
 }
 
+/* that one single hyperlink in the footer */
+footer a {
+    background-color: #333333;
+    color: #ffffff;
+}
+
 .flex-container {
     box-sizing: border-box;
     flex-direction: row;
@@ -177,11 +191,15 @@ footer {
     display: table;
     text-align:center;
 }
+
 /* Footer Mobile Optimization */
 @media (max-width: 650px) {
     footer {
       flex-direction: column;
     }
+
+
+
 
     
   }
@@ -224,48 +242,76 @@ footer {
 
 /* main page */
 .whyUs {
-    text-align: center;
-    width: 400px;
+    border: 3px;
+    border-color: #00953B;
+    background-color: #00953B;
+    width: 600;
+
+    float: left;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px;
+
+    height: 250px;
 }
 
 
 .announcements {
-    text-align: center;
-    width: 250px;
     border: 3px;
-    border-style: solid;
     border-color: #00953B;
-    background-color: #00953B
+    background-color: #00953B;
+    width: 600;
+
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 300px;
+
 }
 
 
 .quickLinks {
-    text-align: center;
-    width: 250px;
     border: 3px;
-    border-style: solid;
-    margin-bottom: 315px;
     border-color: #00953B;
-    background-color: #00953B
+    background-color: #00953B;
+    width: 600;
+
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+    padding: 10px;
+    margin: 10px;
+    
+
 }
 
 .mainInfo {
-    text-align: center;
-    width: 250px;
+    border: 3px;
     border-color: #00953B;
     background-color: #00953B;
-}
+    width: 600;
 
+    float: right;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px;
+
+    height: 250px;
+
+}   
 
 
 
 
 /* athletics home page */
 .general {
-    border: 3px;
-    border-style: solid;
-    border-color: #00953B;
-    background-color: #00953B;
-
-    width: 400px;
+    
 }
