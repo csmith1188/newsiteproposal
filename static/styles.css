@@ -296,11 +296,26 @@ footer {
 /* athletics home page */
 .opportunities {
     width: 600px;
-    border: 3px
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
 }
 
 .scorevision {
     width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
 }
 
 .scorevision a {
@@ -309,12 +324,81 @@ footer {
 
 .banners {
     width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
 }
 
 .coaching  {
     width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
 }
 
 .coaching a {
     color: blue;
+}
+
+
+.prices {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+.schedules {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+.schedules a {
+    color: blue;
+}
+
+.specialAnnouncements {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+.spartanAthletics {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
 }
