@@ -1,4 +1,6 @@
-
+body {
+    margin: 0;
+}
 
 .Welcome {
     text-align: center;
@@ -73,11 +75,22 @@ font-size: medium;
     font-size: medium;
 }
 
+/*template styles*/
+.text-container{
+    font-family: helvetica;
+}
+.text-container video {
+    width: 80%
+}
 
+
+@media (max-width: 650px) {
+    .text-container video {
+        width: 100%
+    }
+}
 
 /* header Styles */
-
-
 .header-container {
     background-color: #00953b;
     padding-bottom: 150px;
@@ -140,11 +153,6 @@ a:visited {
     
 }
 
-/* body Styles */
-body {
-    margin: 0;
-}
-
 
 /* Footer Styles */
 footer {
@@ -174,10 +182,10 @@ footer a {
     text-align:center;
 }
 
-@media (max-width: 600px) {
-    footer {
-      flex-direction: column;
-    }
+@media (max-width: 650px) {
+footer {
+    flex-direction: column;
+}
 
     
   }

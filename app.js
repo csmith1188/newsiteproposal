@@ -60,6 +60,11 @@ app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
 })
 
+//athletics
+app.get('/template', function(req,res){
+    res.render('template.ejs')
+})
+
 
 
 //listen server
