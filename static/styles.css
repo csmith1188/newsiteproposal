@@ -298,12 +298,7 @@ footer {
     width: 600px;
     text-align: left;
 
-    border-bottom:3px;
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px;
-    border-color: black;
-    border-style: solid;
+   
 }
 
 .scorevision {
@@ -314,7 +309,7 @@ footer {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    border-color: black;
+    border-color: #00953B;
     border-style: solid;
 }
 
@@ -330,7 +325,7 @@ footer {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    border-color: black;
+    border-color: #00953B;
     border-style: solid;
 }
 
@@ -342,7 +337,7 @@ footer {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    border-color: black;
+    border-color: #00953B;
     border-style: solid;
 }
 
@@ -359,7 +354,7 @@ footer {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    border-color: black;
+    border-color: #00953B;
     border-style: solid;
 }
 
@@ -371,7 +366,7 @@ footer {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    border-color: black;
+    border-color: #00953B;
     border-style: solid;
 }
 
@@ -387,7 +382,7 @@ footer {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    border-color: black;
+    border-color: #00953B;
     border-style: solid;
 }
 
@@ -399,6 +394,6 @@ footer {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    border-color: black;
+    border-color: #00953B;
     border-style: solid;
 }
