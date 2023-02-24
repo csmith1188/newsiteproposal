@@ -1,0 +1,39 @@
+<html>
+    <%- include('partials/_header') -%>
+    <head>
+        
+        <h1 class="Temph1"><%- pageTitle -%></h1>
+
+    </head>
+
+    <body>
+
+        <center>
+            <div id="tempVideo">
+            
+            </div>
+        </center>
+        
+
+        <p class="pageInfo"><%- pageInfo -%></p>
+    </body>
+    <%- include('partials/_footer') -%>
+
+    <script>
+        const videoDiv = document.getElementById("tempVideo")
+        const node = document.createElement('video')
+        const sourceVid = document.createElement('source')
+        const vidPath = <%- JSON.stringify(pageVideo) %>
+
+        if (vidPath.toLowerCase != "null") {
+            setAttributes(node, {"width": "1000px", "height": "800px", "controls": "controls"})
+            setAttributes(sourceVid, {"src": vidPath, "type": "video/mp4"})
+            node.appendChild(sourceVid)
+            videoDiv.appendChild(node)
+        }
+
+        function setAttributes(el, attrs) {
+            Object.keys(attrs).forEach(key => el.setAttribute(key, attrs[key]));
+        }
+    </script>
+</html>

@@ -310,8 +310,11 @@ footer a {
 
 
 
+/* Shop pages template CSS */
+.Temph1 {
+    text-align: center;
+}
 
-/* athletics home page */
-.general {
-    
+.pageInfo {
+    font-size: large;
 }
