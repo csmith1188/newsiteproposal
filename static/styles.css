@@ -97,6 +97,7 @@ font-size: medium;
 }
 
 /* header Styles */
+
 .header-container {
     background-color: #00953b;
     padding-bottom: 150px;
@@ -155,8 +156,17 @@ a:visited {
 .header-pages {
     background-color: #333333;
     text-align: center;
-    
-    
+    flex-basis: content;
+
+    display: flex;
+}
+
+
+.header-page {
+    border-left: 1px solid;
+    color: #fff; 
+    flex-direction: row;
+    flex: 1 1 0;
 }
 
 
@@ -188,32 +198,52 @@ footer a {
     text-align:center;
 }
 
+/* Footer Mobile Optimization */
 @media (max-width: 650px) {
-footer {
-    flex-direction: column;
-}
+    footer {
+      flex-direction: column;
+    }
+
+
+
 
     
   }
-
-  @media (max-width: 646px) {
+/* Header Mobile Optimization */
+  @media (max-width: 650px) {
     .header-h1 {
         padding-top: 10px;
         margin-top: 20px;
         margin-left: 7px;
-        font-size: 3vw;
+        font-size: 4.5vw;
 
     }
     .header-img {
         padding-top: 5px;
         padding-right: 5px;
-        width: 11vw;
+        width: 15vw;
     }
     .header-container {
         padding-bottom: 75px;
-        padding-top: .5px;
+        padding-top: 15px;
         padding-left: 5px;
     }
+
+    .header-pages {
+        flex-direction: column;
+        
+    }
+
+    .header-page {
+        border-bottom: 1px solid #fff;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    .header-links {
+        font-size: 75%;
+    }
+
   }
 
 
@@ -289,74 +319,14 @@ footer {
 
 
 
-
-
-
-
-/* athletics home page */
-.opportunities {
-    width: 600px;
-    text-align: left;
-
-   
+/* Shop pages template CSS */
+.Temph1 {
+    text-align: center;
 }
 
-.scorevision {
-    width: 600px;
-    text-align: left;
+.pageInfo {
+    font-size: large;
 
-    border-bottom:3px;
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px;
-    border-color: #00953B;
-    border-style: solid;
-}
-
-.scorevision a {
-    color: blue;
-}
-
-.banners {
-    width: 600px;
-    text-align: left;
-
-    border-bottom:3px;
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px;
-    border-color: #00953B;
-    border-style: solid;
-}
-
-.coaching  {
-    width: 600px;
-    text-align: left;
-
-    border-bottom:3px;
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px;
-    border-color: #00953B;
-    border-style: solid;
-}
-
-.coaching a {
-    color: blue;
-}
-
-
-.prices {
-    width: 600px;
-    text-align: left;
-
-    border-bottom:3px;
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px;
-    border-color: #00953B;
-    border-style: solid;
-}
 
 .schedules {
     width: 600px;
