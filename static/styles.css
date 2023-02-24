@@ -1,5 +1,11 @@
+
+a {
+    color: white
+}
+
 body {
     margin: 0;
+
 }
 
 .Welcome {
@@ -240,6 +246,9 @@ footer a {
 
   }
 
+
+
+
 /* main page */
 .whyUs {
     border: 3px;
@@ -317,4 +326,44 @@ footer a {
 
 .pageInfo {
     font-size: large;
+
+
+.schedules {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.schedules a {
+    color: blue;
+}
+
+.specialAnnouncements {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.spartanAthletics {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
 }
