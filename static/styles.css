@@ -320,13 +320,10 @@ footer a {
 
 
 /* Shop pages template CSS */
-.Temph1 {
-    text-align: center;
-}
 
 .pageInfo {
     font-size: large;
-
+}
 
 .schedules {
     width: 600px;
@@ -357,6 +354,66 @@ footer a {
 }
 
 .spartanAthletics {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.coaching {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.opportunities {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.scorevision {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.prices {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.banners {
     width: 600px;
     text-align: left;
 
