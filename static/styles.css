@@ -256,14 +256,13 @@ footer a {
     background-color: #00953B;
     width: 600;
 
-    float: left;
+  
     color: white;
     text-shadow: black 0px 0px 3px;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    margin: 10px;
 
-    height: 250px;
+    padding: 10px;
+    margin-top: 15px;
 }
 
 
@@ -276,10 +275,9 @@ footer a {
     color: white;
     text-shadow: black 0px 0px 3px;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    margin: 10px;
-    margin-bottom: 300px;
+ 
 
+    margin-bottom: 200px;
 }
 
 
@@ -288,16 +286,13 @@ footer a {
     border-color: #00953B;
     background-color: #00953B;
     width: 600;
-
+    height: 250px;
     color: white;
     text-shadow: black 0px 0px 3px;
     font-family: Arial, Helvetica, sans-serif;
 
-    
-    padding: 10px;
-    margin: 10px;
-    
-
+    position: relative; right: 700px; top: -300px;
+    margin-left: 125px;
 }
 
 .mainInfo {
@@ -305,17 +300,22 @@ footer a {
     border-color: #00953B;
     background-color: #00953B;
     width: 600;
+    height: 250px;
 
-    float: right;
+   
     color: white;
     text-shadow: black 0px 0px 3px;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    margin: 10px;
 
-    height: 250px;
+
+    float:right;
+    margin-right: 15px;
 
 }   
+
+
+
+
 
 
 
