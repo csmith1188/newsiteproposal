@@ -1,22 +1,28 @@
 <html>
     <%- include('partials/_header') -%>
     <head>
-        
-        <h1 class="Temph1"><%- pageTitle -%></h1>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Template</title>
+       
 
     </head>
 
     <body>
-
-        <center>
+    <div class="text-container">
+    <center>
+        <h1 class="Temph1"><%- pageTitle -%></h1>
+      
             <div id="tempVideo">
             
             </div>
-        </center>
+       
         
-
-        <p class="pageInfo"><%- pageInfo -%></p>
+        <%- pageInfo -%>
+    </center>
+    </div>
+        
     </body>
+    
     <%- include('partials/_footer') -%>
 
     <script>
@@ -26,7 +32,7 @@
         const vidPath = <%- JSON.stringify(pageVideo) %>
 
         if (vidPath.toLowerCase != "null") {
-            setAttributes(node, {"width": "1000px", "height": "800px", "controls": "controls"})
+            setAttributes(node, {"controls": "controls"})
             setAttributes(sourceVid, {"src": vidPath, "type": "video/mp4"})
             node.appendChild(sourceVid)
             videoDiv.appendChild(node)

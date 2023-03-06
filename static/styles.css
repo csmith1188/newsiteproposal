@@ -81,21 +81,6 @@ font-size: medium;
     font-size: medium;
 }
 
-/*template styles*/
-.text-container{
-    font-family: helvetica;
-}
-.text-container video {
-    width: 80%
-}
-
-
-@media (max-width: 650px) {
-    .text-container video {
-        width: 100%
-    }
-}
-
 /* header Styles */
 
 .header-container {
@@ -317,9 +302,28 @@ footer a {
 
 }   
 
+/* Shop CSV template */
+.text-container{
+    font-family: helvetica;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-container video {
+    width: 100%
+}
+
+@media (max-width: 650px) {
+    .text-container {
+        width: 100%;
+    }
+}
 
 
-/* Shop pages template CSS */
+
+/* Athletics Page (please fix please dear god) */
 
 .pageInfo {
     font-size: large;
