@@ -18,7 +18,7 @@ app.use(express.static('./static'))
 function convertExcelFileToJsonUsingXlsx() {
 
     // Read the file using pathname
-    const file = xlsx.readFileSync('shops.xlsx');
+    const file = xlsx.readFileSync('Excell Sheets/shops.xlsx');
   
     // Grab the sheet info from the file
     const sheetNames = file.SheetNames;
