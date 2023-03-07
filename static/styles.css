@@ -65,6 +65,17 @@ font-size: medium;
     position: absolute;
     top: 15px;
     right: 15px;
+    
+}
+
+.header-h1 {
+    float: left;
+    margin-top: 40px;
+    margin-left: 15px;
+    padding-top: 20px;
+    color:white;
+    font-family: "Autumn Thin";
+    font-size:
 }
 
 a:link {
@@ -120,10 +131,14 @@ footer {
     flex-direction: column;
 }
 
-.logo {
-    width: 150px;
-    height: 150px;
-    margin-right: 10px;
+
+
+
+/* Athletics Page (please fix please dear god) */
+
+
+.pageInfo {
+    font-size: large;
 }
 
 .social-media::before {
