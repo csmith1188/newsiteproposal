@@ -108,6 +108,17 @@ font-size: medium;
     top: 15px;
     right: 15px;
     
+
+}
+
+.header-h1 {
+    float: left;
+    margin-top: 40px;
+    margin-left: 15px;
+    padding-top: 20px;
+    color:white;
+    font-family: "Autumn Thin";
+    font-size:
 }
 
 .header-h1 {
@@ -312,7 +323,7 @@ footer a {
     font-family: helvetica;
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -324,10 +335,6 @@ footer a {
     .text-container {
         width: 100%;
     }
-}
-
-
-
 
 /* Athletics Page (please fix please dear god) */
 
