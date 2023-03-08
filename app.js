@@ -32,7 +32,7 @@ function convertExcelFileToJsonUsingXlsx() {
   
         // Convert to json using xlsx
         const tempData = xlsx.utils.sheet_to_json(file.Sheets[sheetNames[i]]);
-  
+
     
   
         // Add the sheet's json to our data array
@@ -48,18 +48,14 @@ function convertExcelFileToJsonUsingXlsx() {
   function generateJSONFile(data) {
     try {
     fs.writeFileSync('data.json', JSON.stringify(data))
-    }
 
-
-     catch (err) {
+     
+    
+  }
+  catch (err) {
     console.error(err)
     }
-    for (let i = 0; i < data.length; i++) {
-        
-        
-       
- }
-  }
+}
 
 function shopTemps(data) {
     for (let i = 0; i < data.length; i++) {
@@ -108,21 +104,15 @@ app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
 })
 
-//athletics
-app.get('/template', function(req,res){
-    res.render('template.ejs')
-})
 
 
 
 
-
-
+convertExcelFileToJsonUsingXlsx()
 
 //listen server
 app.listen(port, function () {
     console.log("Listening on port " + port)
-    convertExcelFileToJsonUsingXlsx()
 })
 
 

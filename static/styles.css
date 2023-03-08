@@ -8,27 +8,10 @@ body {
 
 }
 
-.Welcome {
-    text-align: center;
-    text-decoration: underline;
-    font-size: x-large;
-}
-.infoiaccess {
-width: 700px;
-text-align: center;
-font-size: large;
-}
-
-.wheredoiaccess {
-width: 700px;
-text-align: center;
-font-size: large;
-}
-
-.gainaccess {
-    width: 700px;
+.Parents {
     text-align: center;
     font-size: large;
+    width:65%;
 }
 
 .four_it_shops {
@@ -69,18 +52,62 @@ font-size: x-large;
     
 }
 
-#gainaccessinfo {
-font-size: medium;
+#InfoIAccess {
+    text-align: center;
 }
 
-#wheredoiaccessinfo {
-font-size: medium;
+#WhereDoIaccess {
+    text-align: center;
 }
 
-#infoiaccessinfo {
-    font-size: medium;
+@media (max-width: 650px) {
+    .text-container  {
+        width: 100%
+    }
+    
 }
 
+/*template styles*/
+.text-container{
+    font-family: helvetica;
+}
+.text-container video {
+    width: 80%
+}
+
+
+@media (max-width: 650px) {
+    .Parents {
+        text-align: center;
+        font-size: large;
+        width:95%;
+    }
+    
+    .four_it_shops {
+        width: 700px;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .whatwillilearn_it {
+        width: 700px;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .list_of_options {
+        font-size: large;
+    }
+    
+    .list_of_options.p{
+        text-align: left;
+    }
+    
+    .Career_welcome {
+    text-decoration: underline;
+    font-size: x-large;
+    }
+}
 /* header Styles */
 
 .header-container {
@@ -108,6 +135,17 @@ font-size: medium;
     top: 15px;
     right: 15px;
     
+
+}
+
+.header-h1 {
+    float: left;
+    margin-top: 40px;
+    margin-left: 15px;
+    padding-top: 20px;
+    color:white;
+    font-family: "Autumn Thin";
+    font-size:d
 }
 
 .header-h1 {
@@ -246,7 +284,7 @@ footer a {
     text-shadow: black 0px 0px 3px;
     font-family: Arial, Helvetica, sans-serif;
 
-    
+    padding: 10px;
     margin-top: 15px;
 }
 
@@ -299,16 +337,6 @@ footer a {
 
 }   
 
-
-.home-container {
-   display: flex;
-   flex-direction: column;
-   
-}
-
-
-
-
 /* Shop CSV template */
 .text-container{
     font-family: helvetica;
@@ -328,6 +356,33 @@ footer a {
     }
 }
 
+/* Shop pages template CSS */
+.home-container {
+   
+}
+
+
+
+
+/* Shop CSV template */
+.text-container{
+    font-family: helvetica;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-container video {
+    width: 100%
+}
+
+@media (max-width: 650px) {
+    .text-container {
+        width: 100%;
+    }
+}
+/* Athletics Page (please fix please dear god) */
 
 
 
