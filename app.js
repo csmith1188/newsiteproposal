@@ -114,11 +114,11 @@ app.get('/template', function(req,res){
 
 
 
+convertExcelFileToJsonUsingXlsx()
 
 //listen server
 app.listen(port, function () {
     console.log("Listening on port " + port)
-    convertExcelFileToJsonUsingXlsx()
 })
 
 

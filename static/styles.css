@@ -8,27 +8,10 @@ body {
 
 }
 
-.Welcome {
-    text-align: center;
-    text-decoration: underline;
-    font-size: x-large;
-}
-.infoiaccess {
-width: 700px;
-text-align: center;
-font-size: large;
-}
-
-.wheredoiaccess {
-width: 700px;
-text-align: center;
-font-size: large;
-}
-
-.gainaccess {
-    width: 700px;
+.Parents {
     text-align: center;
     font-size: large;
+    width:65%;
 }
 
 .four_it_shops {
@@ -69,16 +52,19 @@ font-size: x-large;
     
 }
 
-#gainaccessinfo {
-font-size: medium;
+#InfoIAccess {
+    text-align: center;
 }
 
-#wheredoiaccessinfo {
-font-size: medium;
+#WhereDoIaccess {
+    text-align: center;
 }
 
-#infoiaccessinfo {
-    font-size: medium;
+@media (max-width: 650px) {
+    .text-container  {
+        width: 100%
+    }
+    
 }
 
 /*template styles*/
@@ -91,8 +77,35 @@ font-size: medium;
 
 
 @media (max-width: 650px) {
-    .text-container video {
-        width: 100%
+    .Parents {
+        text-align: center;
+        font-size: large;
+        width:95%;
+    }
+    
+    .four_it_shops {
+        width: 700px;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .whatwillilearn_it {
+        width: 700px;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .list_of_options {
+        font-size: large;
+    }
+    
+    .list_of_options.p{
+        text-align: left;
+    }
+    
+    .Career_welcome {
+    text-decoration: underline;
+    font-size: x-large;
     }
 }
 
