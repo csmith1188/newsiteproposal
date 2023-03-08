@@ -18,7 +18,7 @@ app.use(express.static('./static'))
 function convertExcelFileToJsonUsingXlsx() {
 
     // Read the file using pathname
-    const file = xlsx.readFileSync('newData.xlsx');
+    const file = xlsx.readFileSync('Excell Sheets/shops.xlsx');
   
     // Grab the sheet info from the file
     const sheetNames = file.SheetNames;
@@ -103,12 +103,6 @@ app.get('/mediaCenter', function (req,res) {
 app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
 })
-
-//athletics
-app.get('/template', function(req,res){
-    res.render('template.ejs')
-})
-
 
 
 
