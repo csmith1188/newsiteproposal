@@ -337,10 +337,19 @@ footer a {
 
 }   
 
+
+@media (max-width: 650px) {
+    .home-container {
+        width: 150%;
+    }
+}
+
+
+
 .home-container {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
+
 
 
 
