@@ -14,11 +14,11 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./static'))
 
-
-function convertExcelFileToJsonUsingXlsx() {
+//has two arguments. filepath is for what file is being scanned, and sendTo is where JSON data is being sent to
+function convertExcelFileToJsonUsingXlsx(filepath, sendTo) {
 
     // Read the file using pathname
-    const file = xlsx.readFileSync('newData.xlsx');
+    const file = xlsx.readFileSync(filepath);
   
     // Grab the sheet info from the file
     const sheetNames = file.SheetNames;
@@ -41,13 +41,13 @@ function convertExcelFileToJsonUsingXlsx() {
   
    // call a function to save the data in a json file
   
-   generateJSONFile(parsedData);
+   generateJSONFile(parsedData, sendTo);
    shopTemps(parsedData)
   }
 
-  function generateJSONFile(data) {
+  function generateJSONFile(data, sendTo) {
     try {
-    fs.writeFileSync('data.json', JSON.stringify(data))
+    fs.writeFileSync(sendTo, JSON.stringify(data))
     }
 
 
@@ -122,7 +122,8 @@ app.get('/template', function(req,res){
 //listen server
 app.listen(port, function () {
     console.log("Listening on port " + port)
-    convertExcelFileToJsonUsingXlsx()
+    convertExcelFileToJsonUsingXlsx('newData.xlsx', 'data.json')
+    convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
 })
 
 
