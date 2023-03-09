@@ -311,23 +311,18 @@ footer a {
 }   
 
 /*District Map CSS*/
-/* 
- * Always set the map height explicitly to define the size of the div element
- * that contains the map. 
- */
- #map {
+.google-map {
+    padding-bottom: 50%;
+    position: relative;
+}
+
+.google-map iframe {
     height: 100%;
-  }
-  
-  /* 
-   * Optional: Makes the sample page fill the window. 
-   */
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
   
 
 
