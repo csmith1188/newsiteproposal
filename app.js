@@ -8,6 +8,7 @@ var fs = require('fs');
 const xlsx = require('xlsx');
 const { json } = require('body-parser')
 
+
 //settings 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -16,6 +17,22 @@ app.use(express.static('./static'))
 app.use('/fonts', express.static(__dirname + '/fonts'));
 
 
+//google maps fun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Excel sheet fun
 function convertExcelFileToJsonUsingXlsx() {
 
     // Read the file using pathname
