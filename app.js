@@ -42,7 +42,7 @@ function convertExcelFileToJsonUsingXlsx() {
    // call a function to save the data in a json file
   
    generateJSONFile(parsedData);
-   shopTemps(parsedData)
+   shopTemps()
   }
 
   function generateJSONFile(data) {
@@ -54,18 +54,16 @@ function convertExcelFileToJsonUsingXlsx() {
      catch (err) {
     console.error(err)
     }
-    for (let i = 0; i < data.length; i++) {
-        
-        
-       
- }
+    
   }
 
-function shopTemps(data) {
-    for (let i = 0; i < data.length; i++) {
-        const pageData = data[i];
+function shopTemps() {
+    const rawData = fs.readFileSync('data.json', 'utf8');
+    let words = JSON.parse(rawData)
+    for (let i = 0; i < words.length; i++) {
+        let pageData = words[i]
         
-        app.get(`${pageData.Endpoint}`, function (req,res) {
+        app.get(`${pageData["Endpoint"]}`, function (req,res) {
             res.render('shopTemplate.ejs', {
                 pageTitle: pageData["Page Header"],
                 pageInfo: pageData["Page Text"],
@@ -73,6 +71,7 @@ function shopTemps(data) {
             })
         })
     }
+
 }
 
 //port and ip
@@ -93,7 +92,21 @@ app.get('/parents', function (req,res) {
 
 //career programs page
 app.get('/career', function (req,res) {
-    res.render('career_programs.ejs')
+    var words = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+    var headerList = []
+    var endpointList = []
+    var tagList = []
+
+    for (let i = 0; i < words.length; i++) {
+        headerList.push(words[i]["Page Header"]);
+        endpointList.push(words[i]["Endpoint"])
+        tagList.push(words[i]["Header Tag"])
+    }
+    res.render('career_programs.ejs', {
+        headers: headerList,
+        endpoints: endpointList,
+        tags: tagList
+    })
 })
 
 

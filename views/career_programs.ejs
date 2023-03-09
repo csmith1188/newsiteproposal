@@ -26,14 +26,86 @@
     </p>
 </center>
 <center>
-<div class="list_of_options">
-<h3>Information Technology</h3>
-<li><a href="http://localhost:1010/Hardware">Electronics/IT Support</a></li>
-<li><a href="http://localhost:1010/Programming">Computer Programming</a></li>
-<li><a href="http://localhost:1010/Networking">Networking and Cyber Security</a></li>
-<li><a href="http://localhost:1010/Software">Information System Management</a></li>
+<div id="list_of_options">
+<div id="remove">
+
+</div>
+
 </div>
 </center>
+<script>
+    const heads = <%- JSON.stringify(headers) %>
+    const points = <%- JSON.stringify(endpoints) %>
+    const tag = <%- JSON.stringify(tags) %>
+
+    var repeat = false
+    var count = 0
+
+    var shopTags = document.getElementById('list_of_options').children
+    console.log(points)
+    
+    for (let i = 0; i < tag.length; i++) {
+        console.log(shopTags)
+        let node = document.createElement('div')
+        node.setAttribute('id', tag[i])
+        let txt = node.appendChild(document.createElement('h3'))
+        txt.innerText = tag[i]
+
+        if (document.getElementById("list_of_options").querySelector(`#${tag[i]}`) != tag[i]) {
+             document.querySelector('#list_of_options').appendChild(node)
+             console.log(document.querySelector('#list_of_options').appendChild(node))
+             }
+             
+
+        for (let i = 0; i < shopTags.length; i++) {
+            if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == false) {
+                repeat = true
+            }
+
+            else if (node.getAttribute('id') != shopTags[i].getAttribute('id')) {
+                repeat = false
+            }
+            else if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == true) {
+                    count += 1
+                    console.log(count)
+            }
+            
+
+            
+            
+        }
+        for (let i = 0; i < count - 2; i++) {
+            if (shopTags[i]) {
+                if (node.getAttribute('id') == shopTags[i].getAttribute('id')) {
+                document.getElementById(`${tag[i]}`).remove()
+                console.log('remove ' + document.getElementById(`${tag[i]}`))
+            }
+            }
+            
+            
+                
+                    
+                    }
+                } 
+                for (let i = 0; i < heads.length; i++) {
+                    var node2 = document.createElement('li');
+                    var a = node2.appendChild(document.createElement('a'))
+                    a.setAttribute('href', `${points[i]}`)
+                    a.appendChild(document.createTextNode(heads[i]));
+                    
+                    document.getElementById(`${tag[i]}`).appendChild(node2)
+                    }
+        
+        
+        
+                      
+             
+    
+
+
+    
+ 
+</script>
 </body>
 <%- include('partials/_footer') -%>
 </html>
