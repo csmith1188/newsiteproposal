@@ -337,6 +337,32 @@ footer a {
 
 }   
 
+
+@media (max-width: 650px) {
+    .home-container {
+        width: 150%;
+    }
+}
+
+
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+
+
+
+
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+
+
+
+
 /* Shop CSV template */
 .text-container{
     font-family: helvetica;
@@ -357,9 +383,7 @@ footer a {
 }
 
 /* Shop pages template CSS */
-.home-container {
-   
-}
+
 
 
 
