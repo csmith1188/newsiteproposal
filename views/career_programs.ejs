@@ -78,7 +78,7 @@
             if (shopTags[i]) {
                 if (node.getAttribute('id') == shopTags[i].getAttribute('id')) {
                 document.getElementById(`${tag[i]}`).remove()
-                console.log('remove ' + document.getElementById(`${tag[i]}`))
+                console.log('remove ' + document.getElementById(`${tag[i]}`).getAttribute('id'))
             }
             }
             
@@ -91,10 +91,12 @@
                     var node2 = document.createElement('li');
                     var a = node2.appendChild(document.createElement('a'))
                     a.setAttribute('href', `${points[i]}`)
+                    console.log(points[i])
                     a.appendChild(document.createTextNode(heads[i]));
+                    console.log(heads[i])
                     
                     document.getElementById(`${tag[i]}`).appendChild(node2)
-                    }
+                    } 
         
         
         
