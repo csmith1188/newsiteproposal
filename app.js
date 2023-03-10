@@ -36,7 +36,7 @@ app.use('/fonts', express.static(__dirname + '/fonts'));
 function convertExcelFileToJsonUsingXlsx() {
 
     // Read the file using pathname
-    const file = xlsx.readFileSync('newData.xlsx');
+    const file = xlsx.readFileSync('Excell Sheets/shops.xlsx');
   
     // Grab the sheet info from the file
     const sheetNames = file.SheetNames;
@@ -50,7 +50,7 @@ function convertExcelFileToJsonUsingXlsx() {
   
         // Convert to json using xlsx
         const tempData = xlsx.utils.sheet_to_json(file.Sheets[sheetNames[i]]);
-  
+
     
   
         // Add the sheet's json to our data array
@@ -66,18 +66,14 @@ function convertExcelFileToJsonUsingXlsx() {
   function generateJSONFile(data) {
     try {
     fs.writeFileSync('data.json', JSON.stringify(data))
-    }
 
-
-     catch (err) {
+     
+    
+  }
+  catch (err) {
     console.error(err)
     }
-    for (let i = 0; i < data.length; i++) {
-        
-        
-       
- }
-  }
+}
 
 function shopTemps(data) {
     for (let i = 0; i < data.length; i++) {
@@ -132,11 +128,11 @@ app.get('/districts', function(req, res){
 
 
 
+convertExcelFileToJsonUsingXlsx()
 
 //listen server
 app.listen(port, function () {
     console.log("Listening on port " + port)
-    convertExcelFileToJsonUsingXlsx()
 })
 
 
