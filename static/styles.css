@@ -1,63 +1,132 @@
 
-/* header Styles */
+a {
+    color: blue
+}
 
-.Welcome {
+body {
+    margin: 0;
+
+}
+
+.Parents {
     text-align: center;
-    text-decoration: underline;
-    font-size: x-large;
-}
-.infoiaccess {
-width: 700px;
-text-align: center;
-font-size: large;
+    font-size: large;
+    width:65%;
 }
 
-.wheredoiaccess {
-    width: 700px;
-text-align: center;
-font-size: large;
-}
-
-.gainaccess {
+.four_it_shops {
     width: 700px;
     text-align: center;
     font-size: large;
 }
 
-#gainaccessinfo {
-font-size: medium;
+.whatwillilearn_it {
+    width: 700px;
+    text-align: center;
+    font-size: large;
 }
 
-#wheredoiaccessinfo {
-font-size: medium;
+.list_of_options {
+    font-size: large;
 }
 
-#infoiaccessinfo {
+.list_of_options.p{
+    text-align: left;
+}
+
+.Career_welcome {
+text-decoration: underline;
+font-size: x-large;
+}
+
+#Career_welcome_opening {
+    font-size: large;
+}
+
+#moreit_info {
+    font-size: large;
+}
+
+#four_it_shops {
     font-size: medium;
+    
 }
+
+#InfoIAccess {
+    text-align: center;
+}
+
+#WhereDoIaccess {
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .text-container  {
+        width: 100%
+    }
+    
+}
+
+/*template styles*/
+.text-container{
+    font-family: helvetica;
+}
+.text-container video {
+    width: 80%
+}
+
+
+@media (max-width: 650px) {
+    .Parents {
+        text-align: center;
+        font-size: large;
+        width:95%;
+    }
+    
+    .four_it_shops {
+        width: 700px;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .whatwillilearn_it {
+        width: 700px;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .list_of_options {
+        font-size: large;
+    }
+    
+    .list_of_options.p{
+        text-align: left;
+    }
+    
+    .Career_welcome {
+    text-decoration: underline;
+    font-size: x-large;
+    }
+}
+/* header Styles */
 
 .header-container {
-    background-color: #009645;
+    background-color: #00953b;
+    padding-bottom: 150px;
+
     
-    padding-bottom: 22px;
     padding-top:1px;
+    padding-left: 10px;
     
 }
 
 .header-img {
     float: left;
+    padding-right: 10px;
+    padding-top: 10px;
 }
 
-.header-h1 {
-        float : left;
-        border: 3px;
-        border-style: solid;
-        border-color: #009645;
-        border-radius: 15px;
-        margin-top: 40px;
-        margin-left: 15px;
-        padding-top: 50px
-}
+
 
 .header-links {
     text-align: right;
@@ -65,7 +134,32 @@ font-size: medium;
     position: absolute;
     top: 15px;
     right: 15px;
+    
+
 }
+
+.header-h1 {
+    float: left;
+    margin-top: 40px;
+    margin-left: 15px;
+    padding-top: 20px;
+    color:white;
+    font-family: "Autumn Thin";
+    font-size:d
+}
+
+.header-h1 {
+    float: left;
+    margin-top: 40px;
+    margin-left: 15px;
+    padding-top: 20px;
+}
+
+
+
+
+
+
 
 a:link {
     background-color: transparent; 
@@ -73,7 +167,7 @@ a:link {
 }
 
 a:hover {
-    background-color: transparent;
+    background-color: #095540;
     text-decoration: underline;
 }
 
@@ -83,51 +177,305 @@ a:visited {
 }
 
 .header-pages {
-    background-color: gray;
+    background-color: #333333;
     text-align: center;
+    flex-basis: content;
+
+    display: flex;
 }
 
-/* body Styles */
-body {
-    margin: 0;
+
+.header-page {
+    border-left: 1px solid;
+    color: #fff; 
+    flex-direction: row;
+    flex: 1 1 0;
 }
 
 
 /* Footer Styles */
 footer {
     display: flex;
-    background-color: #333;
-    color: #fff;
+    background-color: #333333;
+    color: #ffffff;
     padding: 10px;
     flex-direction: row;
     flex: 1; /* This will make the text-container take up all the available space */
+    font-family: helvetica;
 }
 
-.text-container {
-    display: flex;
-    flex-direction: column;
+/* that one single hyperlink in the footer */
+footer a {
+    background-color: #333333;
+    color: #ffffff;
 }
 
-.social-media{ 
-    margin-left: auto; /* This will push the social-media class to the right */
-    float:right;
-    display: flex;
+.flex-container {
+    box-sizing: border-box;
     flex-direction: row;
+
+    width: 300px;
+    margin:auto;
+    clear: both;
+    display: table;
+    text-align:center;
 }
 
-.text-container {
+/* Footer Mobile Optimization */
+@media (max-width: 650px) {
+    footer {
+      flex-direction: column;
+    }
+
+
+
+
+    
+  }
+/* Header Mobile Optimization */
+  @media (max-width: 650px) {
+    .header-h1 {
+        padding-top: 10px;
+        margin-top: 20px;
+        margin-left: 7px;
+        font-size: 4.5vw;
+
+    }
+    .header-img {
+        padding-top: 5px;
+        padding-right: 5px;
+        width: 15vw;
+    }
+    .header-container {
+        padding-bottom: 75px;
+        padding-top: 15px;
+        padding-left: 5px;
+    }
+
+    .header-pages {
+        flex-direction: column;
+        
+    }
+
+    .header-page {
+        border-bottom: 1px solid #fff;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    .header-links {
+        font-size: 75%;
+    }
+
+  }
+
+
+
+
+/* main page */
+.whyUs {
+    border: 3px;
+    border-color: #00953B;
+    background-color: #00953B;
+    width: 600;
+
+  
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 10px;
+    margin-top: 15px;
+}
+
+
+.announcements {
+    border: 3px;
+    border-color: #00953B;
+    background-color: #00953B;
+    width: 600;
+
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+ 
+
+    margin-bottom: 200px;
+
+}
+
+
+.quickLinks {
+    border: 3px;
+    border-color: #00953B;
+    background-color: #00953B;
+    width: 600;
+    height: 250px;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    position: relative; right: 700px; top: -300px;
+    margin-left: 125px;
+}
+
+.mainInfo {
+    border: 3px;
+    border-color: #00953B;
+    background-color: #00953B;
+    width: 600;
+    height: 250px;
+
+   
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+    float:right;
+    margin-right: 15px;
+
+}   
+
+
+/*District Map CSS*/
+.google-map {
+    position: relative;
+    margin: 0 auto;
+    width: 65%;
+    height: 0;
+    padding-bottom: 40%;
+}
+
+.google-map iframe {
+    height: 100%;
+    width: 65%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+  
+
+/* Shop CSV template */
+.text-container{
+    font-family: helvetica;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-container video {
+    width: 100%
 }
 
-.logo {
-    width: 150px;
-    height: 150px;
-    margin-right: 10px;
+@media (max-width: 650px) {
+    .text-container {
+        width: 100%;
+    }
+}
+/* Athletics Page (please fix please dear god) */
+
+.pageInfo {
+    font-size: large;
 }
 
-.social-media::before {
-    content: "";
-    flex-grow: 1; /* This will make the spacer take up all the available space */
+.schedules {
+    width: 600px;
+    text-align: left;
 
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.schedules a {
+    color: blue;
+}
+
+.specialAnnouncements {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.spartanAthletics {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.coaching {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.opportunities {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.scorevision {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.prices {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
+}
+
+.banners {
+    width: 600px;
+    text-align: left;
+
+    border-bottom:3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: #00953B;
+    border-style: solid;
 }
