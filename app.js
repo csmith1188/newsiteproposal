@@ -8,17 +8,35 @@ var fs = require('fs');
 const xlsx = require('xlsx');
 const { json } = require('body-parser')
 
+
 //settings 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./static'))
+app.use('/fonts', express.static(__dirname + '/fonts'));
+
+//google maps fun
 
 
-function convertExcelFileToJsonUsingXlsx() {
+
+
+
+
+
+
+
+
+
+
+
+
+//Excel sheet fun
+//has two arguments. filepath is for what file is being scanned, and sendTo is where JSON data is being sent to
+function convertExcelFileToJsonUsingXlsx(filepath, sendTo) {
 
     // Read the file using pathname
-    const file = xlsx.readFileSync('Excell Sheets/shops.xlsx');
+    const file = xlsx.readFileSync(filepath);
   
     // Grab the sheet info from the file
     const sheetNames = file.SheetNames;
@@ -41,27 +59,33 @@ function convertExcelFileToJsonUsingXlsx() {
   
    // call a function to save the data in a json file
   
-   generateJSONFile(parsedData);
+
+   generateJSONFile(parsedData, sendTo);
    shopTemps(parsedData)
+
   }
 
-  function generateJSONFile(data) {
+  function generateJSONFile(data, sendTo) {
     try {
-    fs.writeFileSync('data.json', JSON.stringify(data))
+    fs.writeFileSync(sendTo, JSON.stringify(data))
+    }
 
      
     
-  }
+  
   catch (err) {
     console.error(err)
     }
-}
+  }
 
-function shopTemps(data) {
-    for (let i = 0; i < data.length; i++) {
-        const pageData = data[i];
+
+function shopTemps() {
+    const rawData = fs.readFileSync('data.json', 'utf8');
+    let words = JSON.parse(rawData)
+    for (let i = 0; i < words.length; i++) {
+        let pageData = words[i]
         
-        app.get(`${pageData.Endpoint}`, function (req,res) {
+        app.get(`${pageData["Endpoint"]}`, function (req,res) {
             res.render('shopTemplate.ejs', {
                 pageTitle: pageData["Page Header"],
                 pageInfo: pageData["Page Text"],
@@ -69,6 +93,7 @@ function shopTemps(data) {
             })
         })
     }
+
 }
 
 //port and ip
@@ -89,7 +114,21 @@ app.get('/parents', function (req,res) {
 
 //career programs page
 app.get('/career', function (req,res) {
-    res.render('career_programs.ejs')
+    var words = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+    var headerList = []
+    var endpointList = []
+    var tagList = []
+
+    for (let i = 0; i < words.length; i++) {
+        headerList.push(words[i]["Page Header"]);
+        endpointList.push(words[i]["Endpoint"])
+        tagList.push(words[i]["Header Tag"])
+    }
+    res.render('career_programs.ejs', {
+        headers: headerList,
+        endpoints: endpointList,
+        tags: tagList
+    })
 })
 
 
@@ -104,15 +143,18 @@ app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
 })
 
+app.get('/districts', function(req, res){
+    res.render('districtmap.ejs')
+})
 
 
 
-
-convertExcelFileToJsonUsingXlsx()
+//convertExcelFileToJsonUsingXlsx()
 
 //listen server
 app.listen(port, function () {
     console.log("Listening on port " + port)
+    convertExcelFileToJsonUsingXlsx('excel_Sheets/shops.xlsx', 'data.json')
+    //convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
 })
-
 

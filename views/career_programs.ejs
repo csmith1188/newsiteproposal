@@ -26,38 +26,74 @@
     </p>
 </center>
 <center>
-<div class="list_of_options">
-<h3>Information Technology</h3>
-<li><a href="/Hardware">Electronics/IT Support</a></li>
-<li><a href="/Programming">Computer Programming</a></li>
-<li><a href="/Networking">Networking and Cyber Security</a></li>
-<li><a href="/Software">Information System Management</a></li>
-<li><a href="/Culinary">Culinary Arts</a></li>
-<li><a href="/Architecture">Architecture</a></li>
-<li><a href="/Automotive">Automotive</a></li>
-<li><a href="/Carpentry">Carpentry</a></li>
-<li><a href="/Collision">Collision Repair</a></li>
-<li><a href="/Commercial">Commercial & Advertising Art</a></li>
-<li><a href="/Communications">Communications Technology</a></li>
-<li><a href="/Criminal">Criminal Justice</a></li>
-<li><a href="/Dental">Dental Assisting</a></li>
-<li><a href="/Diesel">Diesel Technology</a></li>
-<li><a href="/Childhood">Early Childhood Education</a></li>
-<li><a href="/Electrical">Electrical Occupations</a></li>
-<li><a href="/Engineering">Engineering/Advanced Manufacturing</a></li>
-<li><a href="/HVAC">Heating, Ventilation & Air Conditioning/Plumbing</a></li>
-<li><a href="/Landscaping">Landscaping & Agriculture</a></li>
-<li><a href="/Cosmetology">Licensed Cosmetology</a></li>
-<li><a href="/Medical">Medical Professions Program</a></li>
-<li><a href="/Powersports">PowerSports & Engine Technology</a></li>
-<li><a href="/Precisionmachining">Precision Machining Technology</a></li>
-<li><a href="/Sports">Sports Technology & Exercise Science</a></li>
-<li><a href="/Welding">Welding & Metal Fabrication Technology</a></li>
-
-</div>
 </center>
+<script>
+    const heads = <%- JSON.stringify(headers) %>
+    const points = <%- JSON.stringify(endpoints) %>
+    const tag = <%- JSON.stringify(tags) %>
+    var repeat = false
+    var count = 0
+    var shopTags = document.getElementById('list_of_options').children
+    console.log(points)
+    
+    for (let i = 0; i < tag.length; i++) {
+        console.log(shopTags)
+        let node = document.createElement('div')
+        node.setAttribute('id', tag[i])
+        let txt = node.appendChild(document.createElement('h3'))
+        txt.innerText = tag[i]
+        if (document.getElementById("list_of_options").querySelector(`#${tag[i]}`) != tag[i]) {
+             document.querySelector('#list_of_options').appendChild(node)
+             console.log(document.querySelector('#list_of_options').appendChild(node))
+             }
+             
+        for (let i = 0; i < shopTags.length; i++) {
+            if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == false) {
+                repeat = true
+            }
+            else if (node.getAttribute('id') != shopTags[i].getAttribute('id')) {
+                repeat = false
+            }
+            else if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == true) {
+                    count += 1
+                    console.log(count)
+            }
+            
+            
+            
+        }
+        for (let i = 0; i < count - 2; i++) {
+            if (shopTags[i]) {
+                if (node.getAttribute('id') == shopTags[i].getAttribute('id')) {
+                document.getElementById(`${tag[i]}`).remove()
+                console.log('remove ' + document.getElementById(`${tag[i]}`).getAttribute('id'))
+            }
+            }
+            
+            
+                
+                    
+                    }
+                } 
+                for (let i = 0; i < heads.length; i++) {
+                    var node2 = document.createElement('li');
+                    var a = node2.appendChild(document.createElement('a'))
+                    a.setAttribute('href', `${points[i]}`)
+                    console.log(points[i])
+                    a.appendChild(document.createTextNode(heads[i]));
+                    console.log(heads[i])
+                    
+                    document.getElementById(`${tag[i]}`).appendChild(node2)
+                    } 
+        
+        
+        
+                      
+             
+    
+    
+ 
+</script>
 </body>
 <%- include('partials/_footer') -%>
 </html>
-
-
