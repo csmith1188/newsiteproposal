@@ -72,7 +72,7 @@ function convertExcelFileToJsonUsingXlsx(filepath, sendTo) {
 
      
     
-  }
+  
   catch (err) {
     console.error(err)
     }
@@ -149,13 +149,12 @@ app.get('/districts', function(req, res){
 
 
 
-convertExcelFileToJsonUsingXlsx()
+//convertExcelFileToJsonUsingXlsx()
 
 //listen server
 app.listen(port, function () {
     console.log("Listening on port " + port)
-    convertExcelFileToJsonUsingXlsx('newData.xlsx', 'data.json')
-    convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
+    convertExcelFileToJsonUsingXlsx('excel_Sheets/shops.xlsx', 'data.json')
+    //convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
 })
-
 

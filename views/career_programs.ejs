@@ -37,10 +37,8 @@
     const heads = <%- JSON.stringify(headers) %>
     const points = <%- JSON.stringify(endpoints) %>
     const tag = <%- JSON.stringify(tags) %>
-
     var repeat = false
     var count = 0
-
     var shopTags = document.getElementById('list_of_options').children
     console.log(points)
     
@@ -50,18 +48,15 @@
         node.setAttribute('id', tag[i])
         let txt = node.appendChild(document.createElement('h3'))
         txt.innerText = tag[i]
-
         if (document.getElementById("list_of_options").querySelector(`#${tag[i]}`) != tag[i]) {
              document.querySelector('#list_of_options').appendChild(node)
              console.log(document.querySelector('#list_of_options').appendChild(node))
              }
              
-
         for (let i = 0; i < shopTags.length; i++) {
             if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == false) {
                 repeat = true
             }
-
             else if (node.getAttribute('id') != shopTags[i].getAttribute('id')) {
                 repeat = false
             }
@@ -70,7 +65,6 @@
                     console.log(count)
             }
             
-
             
             
         }
@@ -103,13 +97,9 @@
                       
              
     
-
-
     
  
 </script>
 </body>
 <%- include('partials/_footer') -%>
 </html>
-
-
