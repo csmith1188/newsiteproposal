@@ -105,6 +105,11 @@ app.get('/', function (req,res) {
     res.render('home.ejs')
 })
 
+//newhome 
+app.get('/newhome', function (req,res) {
+    res.render('newhome.ejs')
+})
+
 
 //parents and caregivers
 app.get('/parents', function (req,res) {
