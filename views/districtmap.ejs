@@ -45,27 +45,6 @@
 
             var highlightLayer = L.geoJSON().addTo(mymap);
 
-
-            axios.get(`https://overpass-api.de/api/interpreter?data=[out:json];relation(${relationId});out;`)
-                .then(function (response) {
-                    var relation = response.data.elements[0];
-                    console.log(relation);
-                    var relationGeoJSON = {
-                        type: 'Feature',
-                        properties: relation.tags,
-                        geometry: relation.geometry
-                    };
-                    relationLayer.addData(relationGeoJSON);
-                    highlightLayer.addData(relationGeoJSON); // Add relationGeoJSON to highlightLayer
-                    highlightLayer.setStyle({
-                        fillColor: 'blue',
-                        color: 'blue'
-                    }); // Modify the style function for highlightLayer
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-
                 axios.get(`https://overpass-api.de/api/interpreter?data=[out:json];relation(${relationId});out;`)
                 .then(function (response) {
                     var relation = response.data.elements[0];
