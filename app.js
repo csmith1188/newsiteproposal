@@ -6,7 +6,8 @@ const ejs = require('ejs')
 const bodyParser = require('body-parser')
 var fs = require('fs');
 const xlsx = require('xlsx');
-const { json } = require('body-parser')
+const { json } = require('body-parser');
+//map modules
 
 
 //settings 
@@ -16,12 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./static'))
 app.use('/fonts', express.static(__dirname + '/fonts'));
 
-//google maps fun
-
-
-
-
-
+//openstreetmap fun
 
 
 
