@@ -12,8 +12,8 @@ const path = require('path')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
 var fs = require('fs');
-const xlsx = require('xlsx');
 const { json } = require('body-parser');
+
 
 
 
@@ -35,9 +35,14 @@ var ip = '127.0.0.1' //I don't know why this is here or if we need it.
 //listen server
 app.listen(port, function () {
   console.log("Listening on port " + port)
+
+
   convertExcelFileToJsonUsingXlsx('excel_Sheets/shops.xlsx', 'data.json') //this could likely be done in a function or something that allows pages to get updated and lets the server run continuously 
   //convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
 })
+
+
+
 
 // __  __          _____       _____        _____ ______ 
 //|  \/  |   /\   |  __ \     |  __ \ /\   / ____|  ____|
@@ -79,6 +84,7 @@ app.get('/districts', async (req, res) => {
 
 
 
+
 // ________   _______ ______ _      
 //|  ____\ \ / / ____|  ____| |     
 //| |__   \ V / |    | |__  | |     
@@ -88,6 +94,8 @@ app.get('/districts', async (req, res) => {
 //All the code that relates to using Excel. This is typically used for anything that needs to be changed by an admin. 
 
 //has two arguments. filepath is for what file is being scanned, and sendTo is where JSON data is being sent to
+const xlsx = require('xlsx');
+
 function convertExcelFileToJsonUsingXlsx(filepath, sendTo) {
 
     // Read the file using pathname
@@ -169,6 +177,7 @@ app.get('/career', function (req,res) {
       tags: tagList
   })
 })
+
 
 
 
