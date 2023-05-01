@@ -5,70 +5,26 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Participating Districts</title>
-    <%# leaflet stuff %>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-    <script src="https://unpkg.com/leaflet-osm-polygons/L.Control.OSMRelationLoader.js"></script>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-    <style>
-    #mapid { height: 500px; }
-    </style>
 </head>
 <body>
-    <div class="text-container"><h1>Participating School Districts</h1></div>
-    <body>
+    <div id="map" style="height: 800px;"></div>
+    <script>
+        var map = L.map('map').setView([39.9601662,-76.717791], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-        <div id="mapid"></div>
-        <script>
-            var mymap = L.map('mapid').setView([39.9592906,-76.7229632], 10);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> Trey Floto, York County School of Technology',
-            maxZoom: 15
-            }).addTo(mymap);
-
-            var marker = L.marker([39.9302254,-76.6869776]).addTo(mymap);
-            marker.bindPopup("<b>York County School of Technology</b><br>placeholder text");
-
-            var relationId = '417442';
-            var relationLayer = L.geoJSON(null, {
-                style: function (feature) {
-                    return {
-                        fillColor: 'gray',
-                        color: 'gray'
-                    };
-                }
-            }).addTo(mymap);
-
-            var highlightLayer = L.geoJSON().addTo(mymap);
-
-                axios.get(`https://overpass-api.de/api/interpreter?data=[out:json];relation(${relationId});out;`)
-                .then(function (response) {
-                    var relation = response.data.elements[0];
-                    console.log(relation);
-                    var relationGeoJSON = {
-                        type: 'Feature',
-                        properties: relation.tags,
-                        geometry: relation.geometry
-                    };
-                    relationLayer.addData(relationGeoJSON);
-                    highlightLayer.addData(relationGeoJSON); // Add relationGeoJSON to highlightLayer
-                    highlightLayer.setStyle({
-                        fillColor: 'blue',
-                        color: 'blue'
-                    }); // Modify the style function for highlightLayer
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-
-        </script>
-
-    <div class="text-container">
-    </div>
+        // Add the GeoJSON layer to the map
+        var geojson = <%- JSON.stringify(geojson) %>;
+        L.geoJSON(geojson, {
+          style: function(feature) {
+              return {
+                  color: '#ff5555', // red outline
+                  weight: 3 // 3-pixel outline width
+              };
+          }
+        }).addTo(map);
+    </script>
 </body>
 <%- include('partials/_footer') -%>
 </html>

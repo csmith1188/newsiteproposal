@@ -18,13 +18,42 @@ app.use(express.static('./static'))
 app.use('/fonts', express.static(__dirname + '/fonts'));
 
 //openstreetmap fun
+const osmtogeojson = require('osmtogeojson');
+const https = require('https');
+const relationId = 417442;
+const query = `[out:json];relation(${relationId});out geom;`;
+const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
 
 
+app.get('/districts', async (req, res) => {
+  try {
+    https.get(url, (response) => {
+      let data = '';
+
+      response.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      response.on('end', () => {
+        const geojson = osmtogeojson(JSON.parse(data));
+        res.render('districtmap', { geojson });
+      });
+    }).on('error', (error) => {
+      console.error(error);
+      res.status(500).send('An error occurred');
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('An error occurred');
+  }
+});
 
 
-
-
-
+/*
+app.get('/districts', function(req, res){
+    res.render('districtmap.ejs')
+})
+*/
 
 
 //Excel sheet fun
@@ -143,12 +172,6 @@ app.get('/mediaCenter', function (req,res) {
 app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
 })
-
-app.get('/districts', function(req, res){
-    res.render('districtmap.ejs')
-})
-
-
 
 //convertExcelFileToJsonUsingXlsx()
 
