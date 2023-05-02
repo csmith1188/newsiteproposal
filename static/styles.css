@@ -112,7 +112,8 @@ font-size: x-large;
 /* header Styles */
 
 .header-container {
-    background-color: #00953b;
+    background-color: #333333;
+    font-family: "Autumn Thin";
     padding-bottom: 150px;
     padding-top:1px;
     padding-left: 10px;
@@ -167,7 +168,7 @@ a:link {
 }
 
 a:hover {
-    background-color: #095540;
+    background-color: #00953b;
     text-decoration: underline;
 }
 
@@ -177,13 +178,23 @@ a:visited {
 }
 
 .header-pages {
-    background-color: #333333;
-    text-align: center;
-    flex-basis: content;
-
+    background-color: #095540;
+    font-family: "Autumn Thin";
+    font-size: larger;
     display: flex;
-}
-
+    text-align: center;
+    line-height: 50px; 
+    
+} 
+/*
+.header-pages {
+    background-color: #095540;
+    font-family: "Autumn Thin";
+    text-align: center;
+    height: 50px; 
+    line-height: 50px; 
+  }
+*/
 
 .header-pages a {
     border-left: 1px solid;
@@ -267,9 +278,9 @@ footer a {
     }
 
     .header-page {
-        border-bottom: 1px solid #fff;
-        padding-top: 7px;
-        padding-bottom: 7px;
+        border-bottom: 10px solid #fff;
+        padding-top: 30px;
+        padding-bottom: 20px;
     }
 
     .header-links {
@@ -349,7 +360,7 @@ footer a {
 
 /*District Map CSS*/
 .google-map {
-    position: relative;
+    position: relativ
     margin: 0 auto;
     width: 65%;
     height: 0;

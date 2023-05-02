@@ -105,6 +105,11 @@ app.get('/', function (req,res) {
     res.render('home.ejs')
 })
 
+//newhome 
+app.get('/newhome', function (req,res) {
+    res.render('newhome.ejs')
+})
+
 
 //parents and caregivers
 app.get('/parents', function (req,res) {
@@ -139,8 +144,8 @@ app.get('/mediaCenter', function (req,res) {
 
 
 //athletics
-app.get('/athletics', function(req,res){
-    res.render('athleticsHome.ejs')
+app.get('/sports', function(req,res){
+    res.render('sports.ejs')
 })
 
 app.get('/districts', function(req, res){
