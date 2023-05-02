@@ -54,15 +54,21 @@ app.listen(port, function () {
 
 const osmtogeojson = require('osmtogeojson');
 const https = require('https');
-//York County Relations
+
+//York County Relation
+//https://www.openstreetmap.org/relation/417442
 const relationId1 = 417442;
 const query1 = `[out:json];relation(${relationId1});out geom;`;
 const url1 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query1)}`;
 
-//York City School District Relations
+//York City School District Relation
+//https://www.openstreetmap.org/relation/15798307
 const relationId2 = 15798307;
 const query2 = `[out:json];relation(${relationId2});out geom;`;
 const url2 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query2)}`;
+
+//York Suburban School District Relation
+//https://www.openstreetmap.org/relation/15798797
 
 app.get('/districts', async (req, res) => {
   try {
@@ -238,8 +244,8 @@ app.get('/mediaCenter', function (req,res) {
 
 
 //athletics
-app.get('/sports', function(req,res){
-    res.render('sports.ejs')
+app.get('/athletics', function(req,res){
+    res.render('athleticsHome.ejs')
 })
 
 //convertExcelFileToJsonUsingXlsx()
