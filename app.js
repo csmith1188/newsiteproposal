@@ -54,14 +54,20 @@ app.listen(port, function () {
 
 const osmtogeojson = require('osmtogeojson');
 const https = require('https');
-const relationId = 417442;
-const query = `[out:json];relation(${relationId});out geom;`;
-const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
+//York County Relations
+const relationId1 = 417442;
+const query1 = `[out:json];relation(${relationId1});out geom;`;
+const url1 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query1)}`;
 
+//York City School District Relations
+const relationId2 = 15798307;
+const query2 = `[out:json];relation(${relationId2});out geom;`;
+const url2 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query2)}`;
 
 app.get('/districts', async (req, res) => {
   try {
-    https.get(url, (response) => {
+    // Fetch data for the first region
+    https.get(url1, (response) => {
       let data = '';
 
       response.on('data', (chunk) => {
@@ -69,8 +75,24 @@ app.get('/districts', async (req, res) => {
       });
 
       response.on('end', () => {
-        const geojson = osmtogeojson(JSON.parse(data));
-        res.render('districtmap', { geojson });
+        const geojson1 = osmtogeojson(JSON.parse(data));
+
+        // Fetch data for the second region
+        https.get(url2, (response) => {
+          let data = '';
+
+          response.on('data', (chunk) => {
+            data += chunk;
+          });
+
+          response.on('end', () => {
+            const geojson2 = osmtogeojson(JSON.parse(data));
+            res.render('districtmap', { geojson1, geojson2 });
+          });
+        }).on('error', (error) => {
+          console.error(error);
+          res.status(500).send('An error occurred');
+        });
       });
     }).on('error', (error) => {
       console.error(error);
@@ -81,6 +103,7 @@ app.get('/districts', async (req, res) => {
     res.status(500).send('An error occurred');
   }
 });
+
 
 
 

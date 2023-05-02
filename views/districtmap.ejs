@@ -14,12 +14,24 @@
         var map = L.map('map').setView([39.9601662,-76.717791], 10);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-        // Add the GeoJSON layer to the map
-        var geojson = <%- JSON.stringify(geojson) %>;
-        L.geoJSON(geojson, {
+        // Add the GeoJSON layer for the first region to the map
+        var geojson1 = <%- JSON.stringify(geojson1) %>;
+        L.geoJSON(geojson1, {
           style: function(feature) {
               return {
-                  color: '#095540', // red outline
+                  color: '#095540', // green outline
+                  weight: 3 // 3-pixel outline width
+              };
+          }
+        }).addTo(map);
+
+        // Add the GeoJSON layer for the second region to the map
+        console.log("GeoJSON for second region: ", <%- JSON.stringify(geojson2) %>);
+        var geojson2 = <%- JSON.stringify(geojson2) %>;
+        L.geoJSON(geojson2, {
+          style: function(feature) {
+              return {
+                  color: '#ef7a2d', // orange outline
                   weight: 3 // 3-pixel outline width
               };
           }
