@@ -359,22 +359,8 @@ footer a {
 
 
 /*District Map CSS*/
-.google-map {
-    position: relativ
-    margin: 0 auto;
-    width: 65%;
-    height: 0;
-    padding-bottom: 40%;
-}
 
-.google-map iframe {
-    height: 100%;
-    width: 65%;
-    left: 0;
-    top: 0;
-    position: absolute;
-}
-  
+
 
 /* Shop CSV template */
 .text-container{
