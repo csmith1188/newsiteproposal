@@ -11,20 +11,118 @@
 <body>
     <div id="map" style="height: 800px;"></div>
     <script>
-        var map = L.map('map').setView([39.9601662,-76.717791], 10);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+const map = L.map('map').setView([39.9601662, -76.717791], 10);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-        // Add the GeoJSON layer to the map
-        var geojson = <%- JSON.stringify(geojson) %>;
-        L.geoJSON(geojson, {
-          style: function(feature) {
-              return {
-                  color: '#095540', // red outline
-                  weight: 3 // 3-pixel outline width
-              };
-          }
-        }).addTo(map);
+// Add the York County GeoJSON layer for York County
+let geojson1;
+try {
+  geojson1 = JSON.parse('<%- JSON.stringify(geojson1) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson1) {
+  L.geoJSON(geojson1, {
+    style: function(feature) {
+      return {
+        color: '#095540', // green outline
+        weight: 5 //LEAVE THIS AT 5 PIXELS, IT IS THE MAIN BORDER
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for York City School District
+let geojson2;
+try {
+  geojson2 = JSON.parse('<%- JSON.stringify(geojson2) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson2) {
+  L.geoJSON(geojson2, {
+    style: function(feature) {
+      return {
+        color: '#ef7a2d', // orange outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for York Suburban school District
+let geojson3;
+try {
+  geojson3 = JSON.parse('<%- JSON.stringify(geojson3) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson3) {
+  L.geoJSON(geojson3, {
+    style: function(feature) {
+      return {
+        color: '#f26424', // orange outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for West York area school District
+let geojson4;
+try {
+  geojson4 = JSON.parse('<%- JSON.stringify(geojson4) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson4) {
+  L.geoJSON(geojson4, {
+    style: function(feature) {
+      return {
+        color: '#0A2360', // navy outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Central York School District
+let geojson5;
+try {
+  geojson5 = JSON.parse('<%- JSON.stringify(geojson5) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson5) {
+  L.geoJSON(geojson5, {
+    style: function(feature) {
+      return {
+        color: '#e99034', // yellow outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Dallastown Area School District
+let geojson6;
+try {
+  geojson6 = JSON.parse('<%- JSON.stringify(geojson6) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson6) {
+  L.geoJSON(geojson6, {
+    style: function(feature) {
+      return {
+        color: '#072a79', // blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
     </script>
 </body>
 <%- include('partials/_footer') -%>
 </html>
+
