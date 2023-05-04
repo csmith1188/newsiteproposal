@@ -1,1 +1,1 @@
-npm i && node app.js
+npm i && npm install osmtogeojson && node app.js
