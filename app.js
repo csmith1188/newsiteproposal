@@ -14,9 +14,6 @@ const bodyParser = require('body-parser')
 var fs = require('fs');
 const { json } = require('body-parser');
 
-
-
-
 //  _____ ______ _______ _______ _____ _   _  _____  _____ 
 ///  ____|  ____|__   __|__   __|_   _| \ | |/ ____|/ ____|
 //| (___ | |__     | |     | |    | | |  \| | |  __| (___  
@@ -41,9 +38,6 @@ app.listen(port, function () {
   //convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
 })
 
-
-
-
 // __  __          _____       _____        _____ ______ 
 //|  \/  |   /\   |  __ \     |  __ \ /\   / ____|  ____|
 //| \  / |  /  \  | |__) |    | |__) /  \ | |  __| |__   
@@ -51,38 +45,6 @@ app.listen(port, function () {
 //| |  | |/ ____ \| |         | |  / ____ \ |__| | |____ 
 //|_|  |_/_/    \_\_|         |_| /_/    \_\_____|______|
 //All the code that is required for OpenStreetMap to work on /districts
-
-/*
-//York County Relation
-//https://www.openstreetmap.org/relation/417442
-const relationId1 = 417442;
-const query1 = `[out:json];relation(${relationId1});out geom;`;
-const url1 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query1)}`;
-
-//York City School District Relation
-//https://www.openstreetmap.org/relation/15798307
-const relationId2 = 15798307;
-const query2 = `[out:json];relation(${relationId2});out geom;`;
-const url2 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query2)}`;
-
-//York Suburban School District Relation
-//https://www.openstreetmap.org/relation/15798797
-const relationId3 = 15798797
-const query3 = `[out:json];relation(${relationId3});out geom;`;
-const url3 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query3)}`;
-
-//West York School District Relation
-//https://www.openstreetmap.org/relation/15805026
-const relationId4 = 15805026
-const query4 = `[out:json];relation(${relationId4});out geom;`;
-const url4 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query4)}`;
-
-//Central York Schoool District Relation
-//https://www.openstreetmap.org/relation/15806951
-const relationId5 = 15806951
-const query5 = `[out:json];relation(${relationId5});out geom;`;
-const url5 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query5)}`;
-*/
 
 const osmtogeojson = require('osmtogeojson');
 const https = require('https');
@@ -131,7 +93,6 @@ app.get('/districts', async (req, res) => {
     res.status(500).send('An error occurred');
   }
 });
-
 
 
 
@@ -267,6 +228,11 @@ app.get('/mediaCenter', function (req,res) {
 //athletics
 app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
+})
+
+//calander
+app.get('/calander', function(req,res){
+  res.render('calander.ejs')
 })
 
 //convertExcelFileToJsonUsingXlsx()
