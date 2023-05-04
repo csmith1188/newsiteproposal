@@ -14,9 +14,6 @@ const bodyParser = require('body-parser')
 var fs = require('fs');
 const { json } = require('body-parser');
 
-
-
-
 //  _____ ______ _______ _______ _____ _   _  _____  _____ 
 ///  ____|  ____|__   __|__   __|_   _| \ | |/ ____|/ ____|
 //| (___ | |__     | |     | |    | | |  \| | |  __| (___  
@@ -41,9 +38,6 @@ app.listen(port, function () {
   //convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
 })
 
-
-
-
 // __  __          _____       _____        _____ ______ 
 //|  \/  |   /\   |  __ \     |  __ \ /\   / ____|  ____|
 //| \  / |  /  \  | |__) |    | |__) /  \ | |  __| |__   
@@ -54,13 +48,12 @@ app.listen(port, function () {
 
 const osmtogeojson = require('osmtogeojson');
 const https = require('https');
-const relationId = 417442;
-const query = `[out:json];relation(${relationId});out geom;`;
-const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
 
+function fetchGeoJson(relationId) {
+  const query = `[out:json];relation(${relationId});out geom;`;
+  const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
 
-app.get('/districts', async (req, res) => {
-  try {
+  return new Promise((resolve, reject) => {
     https.get(url, (response) => {
       let data = '';
 
@@ -69,19 +62,37 @@ app.get('/districts', async (req, res) => {
       });
 
       response.on('end', () => {
-        const geojson = osmtogeojson(JSON.parse(data));
-        res.render('districtmap', { geojson });
+        try {
+          const geojson = osmtogeojson(JSON.parse(data));
+          resolve(geojson);
+        } catch (err) {
+          reject(err);
+        }
       });
-    }).on('error', (error) => {
-      console.error(error);
-      res.status(500).send('An error occurred');
+    }).on('error', (err) => {
+      reject(err);
     });
+  });
+}
+
+app.get('/districts', async (req, res) => {
+  try {
+    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6] = await Promise.all([ //Add any new osm relation here
+      //Add any new osm relation here
+      fetchGeoJson(417442), //York County
+      fetchGeoJson(15798307), //York City School District
+      fetchGeoJson(15798797), //York Suburban School District
+      fetchGeoJson(15805026), //West York Area School District
+      fetchGeoJson(15806951), //Central york School District
+      fetchGeoJson(15807383), //Dallastown Area School District
+    ]);
+
+    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6 });//Add any new osm relation here
   } catch (err) {
     console.error(err);
     res.status(500).send('An error occurred');
   }
 });
-
 
 
 
@@ -215,7 +226,7 @@ app.get('/mediaCenter', function (req,res) {
 
 
 //athletics
-app.get('/sports', function(req,res){
+app.get('/athletics', function(req,res){
     res.render('athleticsHome.ejs')
 })
 
