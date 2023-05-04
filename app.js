@@ -52,9 +52,7 @@ app.listen(port, function () {
 //|_|  |_/_/    \_\_|         |_| /_/    \_\_____|______|
 //All the code that is required for OpenStreetMap to work on /districts
 
-const osmtogeojson = require('osmtogeojson');
-const https = require('https');
-
+/*
 //York County Relation
 //https://www.openstreetmap.org/relation/417442
 const relationId1 = 417442;
@@ -69,11 +67,32 @@ const url2 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(
 
 //York Suburban School District Relation
 //https://www.openstreetmap.org/relation/15798797
+const relationId3 = 15798797
+const query3 = `[out:json];relation(${relationId3});out geom;`;
+const url3 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query3)}`;
 
-app.get('/districts', async (req, res) => {
-  try {
-    // Fetch data for the first region
-    https.get(url1, (response) => {
+//West York School District Relation
+//https://www.openstreetmap.org/relation/15805026
+const relationId4 = 15805026
+const query4 = `[out:json];relation(${relationId4});out geom;`;
+const url4 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query4)}`;
+
+//Central York Schoool District Relation
+//https://www.openstreetmap.org/relation/15806951
+const relationId5 = 15806951
+const query5 = `[out:json];relation(${relationId5});out geom;`;
+const url5 = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query5)}`;
+*/
+
+const osmtogeojson = require('osmtogeojson');
+const https = require('https');
+
+function fetchGeoJson(relationId) {
+  const query = `[out:json];relation(${relationId});out geom;`;
+  const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
+
+  return new Promise((resolve, reject) => {
+    https.get(url, (response) => {
       let data = '';
 
       response.on('data', (chunk) => {
@@ -81,35 +100,37 @@ app.get('/districts', async (req, res) => {
       });
 
       response.on('end', () => {
-        const geojson1 = osmtogeojson(JSON.parse(data));
-
-        // Fetch data for the second region
-        https.get(url2, (response) => {
-          let data = '';
-
-          response.on('data', (chunk) => {
-            data += chunk;
-          });
-
-          response.on('end', () => {
-            const geojson2 = osmtogeojson(JSON.parse(data));
-            res.render('districtmap', { geojson1, geojson2 });
-          });
-        }).on('error', (error) => {
-          console.error(error);
-          res.status(500).send('An error occurred');
-        });
+        try {
+          const geojson = osmtogeojson(JSON.parse(data));
+          resolve(geojson);
+        } catch (err) {
+          reject(err);
+        }
       });
-    }).on('error', (error) => {
-      console.error(error);
-      res.status(500).send('An error occurred');
+    }).on('error', (err) => {
+      reject(err);
     });
+  });
+}
+
+app.get('/districts', async (req, res) => {
+  try {
+    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6] = await Promise.all([ //Add any new osm relation here
+      //Add any new osm relation here
+      fetchGeoJson(417442), //York County
+      fetchGeoJson(15798307), //York City School District
+      fetchGeoJson(15798797), //York Suburban School District
+      fetchGeoJson(15805026), //West York Area School District
+      fetchGeoJson(15806951), //Central york School District
+      fetchGeoJson(15807383), //Dallastown Area School District
+    ]);
+
+    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6 });//Add any new osm relation here
   } catch (err) {
     console.error(err);
     res.status(500).send('An error occurred');
   }
 });
-
 
 
 
