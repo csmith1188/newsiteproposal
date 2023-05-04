@@ -219,5 +219,10 @@ app.get('/sports', function(req,res){
     res.render('sports.ejs')
 })
 
+//calander
+app.get('/calander', function(req,res){
+  res.render('calander.ejs')
+})
+
 //convertExcelFileToJsonUsingXlsx()
 
