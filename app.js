@@ -216,7 +216,7 @@ app.get('/mediaCenter', function (req,res) {
 
 //athletics
 app.get('/sports', function(req,res){
-    res.render('sports.ejs')
+    res.render('athleticsHome.ejs')
 })
 
 //calander
