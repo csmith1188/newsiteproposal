@@ -3,27 +3,27 @@
 <link rel="stylesheet" href="styles.css">
 <%- include('partials/_header') -%>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Programs</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Career Programs</title>
 </head>
 <body>
 <center>
-    <div class="Career_welcome">
-    <h1>Welcome to York Techs Career Options</h1>
-    </div>
+   <div class="Career_welcome">
+   <h1>Welcome to York Techs Career Options</h1>
+   </div>
 </center>
 <center>
-    <p id="Career_welcome_opening">
-        York County School of Technology, located at 2179 S. Queen Street (just off Interstate 83 at exit 16A in South-Central Pennsylvania and situated about 30 miles south of Harrisburg)
-        <br>
-         in York County, offers educational opportunities where every high school student is guided and encouraged to reach his or her full potential.
-        <br>
-        High expectations are established for all students and our technical programs offer a well-rounded curriculum for students. 
-        <br>
-         We are proud of the variety of educational opportunities we offer our students to learn and excel.   
-    </p>
+   <p id="Career_welcome_opening">
+       York County School of Technology, located at 2179 S. Queen Street (just off Interstate 83 at exit 16A in South-Central Pennsylvania and situated about 30 miles south of Harrisburg)
+       <br>
+        in York County, offers educational opportunities where every high school student is guided and encouraged to reach his or her full potential.
+       <br>
+       High expectations are established for all students and our technical programs offer a well-rounded curriculum for students.
+       <br>
+        We are proud of the variety of educational opportunities we offer our students to learn and excel.  
+   </p>
 </center>
 <center>
 <div id="list_of_options">
@@ -34,71 +34,71 @@
 </div>
 </center>
 <script>
-    const heads = <%- JSON.stringify(headers) %>
-    const points = <%- JSON.stringify(endpoints) %>
-    const tag = <%- JSON.stringify(tags) %>
-    var repeat = false
-    var count = 0
-    var shopTags = document.getElementById('list_of_options').children
-    console.log(points)
-    
-    for (let i = 0; i < tag.length; i++) {
-        console.log(shopTags)
-        let node = document.createElement('div')
-        node.setAttribute('id', tag[i])
-        let txt = node.appendChild(document.createElement('h3'))
-        txt.innerText = tag[i]
-        if (document.getElementById("list_of_options").querySelector(`#${tag[i]}`) != tag[i]) {
-             document.querySelector('#list_of_options').appendChild(node)
-             console.log(document.querySelector('#list_of_options').appendChild(node))
-             }
-             
-        for (let i = 0; i < shopTags.length; i++) {
-            if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == false) {
-                repeat = true
-            }
-            else if (node.getAttribute('id') != shopTags[i].getAttribute('id')) {
-                repeat = false
-            }
-            else if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == true) {
-                    count += 1
-                    console.log(count)
-            }
-            
-            
-            
-        }
-        for (let i = 0; i < count - 2; i++) {
-            if (shopTags[i]) {
-                if (node.getAttribute('id') == shopTags[i].getAttribute('id')) {
-                document.getElementById(`${tag[i]}`).remove()
-                console.log('remove ' + document.getElementById(`${tag[i]}`).getAttribute('id'))
-            }
-            }
-            
-            
-                
-                    
-                    }
-                } 
-                for (let i = 0; i < heads.length; i++) {
-                    var node2 = document.createElement('li');
-                    var a = node2.appendChild(document.createElement('a'))
-                    a.setAttribute('href', `${points[i]}`)
-                    console.log(points[i])
-                    a.appendChild(document.createTextNode(heads[i]));
-                    console.log(heads[i])
-                    
-                    document.getElementById(`${tag[i]}`).appendChild(node2)
-                    } 
-        
-        
-        
-                      
-             
-    
-    
- 
+   const heads = <%- JSON.stringify(headers) %>
+   const points = <%- JSON.stringify(endpoints) %>
+   const tag = <%- JSON.stringify(tags) %>
+   var repeat = false
+   var count = 0
+   var shopTags = document.getElementById('list_of_options').children
+   console.log(points)
+
+   for (let i = 0; i < tag.length; i++) {
+       console.log(shopTags)
+       let node = document.createElement('div')
+       node.setAttribute('id', tag[i])
+       let txt = node.appendChild(document.createElement('h3'))
+       txt.innerText = tag[i]
+       if (document.getElementById("list_of_options").querySelector(`#${tag[i]}`) != tag[i]) {
+            document.querySelector('#list_of_options').appendChild(node)
+            console.log(document.querySelector('#list_of_options').appendChild(node))
+            }
+
+       for (let i = 0; i < shopTags.length; i++) {
+           if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == false) {
+               repeat = true
+           }
+           else if (node.getAttribute('id') != shopTags[i].getAttribute('id')) {
+               repeat = false
+           }
+           else if (node.getAttribute('id') == shopTags[i].getAttribute('id') && repeat == true) {
+                   count += 1
+                   console.log(count)
+           }
+
+
+
+       }
+       for (let i = 0; i < count - 2; i++) {
+           if (shopTags[i]) {
+               if (node.getAttribute('id') == shopTags[i].getAttribute('id')) {
+               document.getElementById(`${tag[i]}`).remove()
+               console.log('remove ' + document.getElementById(`${tag[i]}`).getAttribute('id'))
+           }
+           }
+
+
+
+
+                   }
+               }
+               for (let i = 0; i < heads.length; i++) {
+                   var node2 = document.createElement('li');
+                   var a = node2.appendChild(document.createElement('a'))
+                   a.setAttribute('href', `${points[i]}`)
+                   console.log(points[i])
+                   a.appendChild(document.createTextNode(heads[i]));
+                   console.log(heads[i])
+
+                   document.getElementById(`${tag[i]}`).appendChild(node2)
+                   }
+
+
+
+
+
+
+
+
 </script>
 </body>
 <%- include('partials/_footer') -%>

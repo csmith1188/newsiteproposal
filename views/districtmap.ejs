@@ -5,22 +5,124 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Participating Districts</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
-<center>
-    <div class="text-container"><h1>Participating School Districts</h1></div>
+    <div id="map" style="height: 800px;"></div>
+    <script>
+const map = L.map('map').setView([39.9601662, -76.717791], 10);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-    <body>
-      <div class="google-map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1529.7495823109166!2d-76.68527127960058!3d39.93022292923513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c8890b42d99345%3A0xe9b16f18cd68c8fe!2sYork%20County%20School%20of%20Technology!5e0!3m2!1sen!2sus!4v1678390009476!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    <div class="text-container">
-    I will add region highlighting in the future.<br>
-    I also need to recenter everything. - Trey
-    </div>
-</center>
+// Add the York County GeoJSON layer for York County
+let geojson1;
+try {
+  geojson1 = JSON.parse('<%- JSON.stringify(geojson1) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson1) {
+  L.geoJSON(geojson1, {
+    style: function(feature) {
+      return {
+        color: '#095540', // green outline
+        weight: 5 //LEAVE THIS AT 5 PIXELS, IT IS THE MAIN BORDER
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for York City School District
+let geojson2;
+try {
+  geojson2 = JSON.parse('<%- JSON.stringify(geojson2) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson2) {
+  L.geoJSON(geojson2, {
+    style: function(feature) {
+      return {
+        color: '#ef7a2d', // orange outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for York Suburban school District
+let geojson3;
+try {
+  geojson3 = JSON.parse('<%- JSON.stringify(geojson3) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson3) {
+  L.geoJSON(geojson3, {
+    style: function(feature) {
+      return {
+        color: '#f26424', // orange outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for West York area school District
+let geojson4;
+try {
+  geojson4 = JSON.parse('<%- JSON.stringify(geojson4) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson4) {
+  L.geoJSON(geojson4, {
+    style: function(feature) {
+      return {
+        color: '#0A2360', // navy outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Central York School District
+let geojson5;
+try {
+  geojson5 = JSON.parse('<%- JSON.stringify(geojson5) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson5) {
+  L.geoJSON(geojson5, {
+    style: function(feature) {
+      return {
+        color: '#e99034', // yellow outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Dallastown Area School District
+let geojson6;
+try {
+  geojson6 = JSON.parse('<%- JSON.stringify(geojson6) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson6) {
+  L.geoJSON(geojson6, {
+    style: function(feature) {
+      return {
+        color: '#072a79', // blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+    </script>
 </body>
 <%- include('partials/_footer') -%>
 </html>
+
