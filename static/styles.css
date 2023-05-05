@@ -254,7 +254,115 @@ footer a {
 
   }
 
-/* main page please fix this parker = bad at pro gamming*/ 
+/* main page*/ 
+
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+  }
+
+  .mySlides {
+    display: none;
+    height: x;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  
+  .slideshow-container {
+    max-width: 1500px;
+    position: relative;
+    margin: auto;
+  }
+
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    border-style: groove;
+    background-color: #1b1b1b;
+  }
+
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #004d0a;
+  }
+
+
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+   .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active {
+    background-color: #1b1b1b;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 10.0s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .8
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {
+      font-size: 11px
+    }
+  }
+
 
 /*District Map CSS*/
 
@@ -276,12 +384,6 @@ footer a {
         width: 100%;
     }
 }
-
-/* main page */
-
-
-
-
 
 /* background video */
 .video-background { 
@@ -316,99 +418,6 @@ video {
     z-index:-1;
 }
 
-/* home page div layers */
-
-.whyUs {
-    position: absolute;
-
-    border: 3px solid;
-    border-color: #00953B;
-    background-color: #00953B;
-    color: white;
-    text-shadow: black 0px 0px 3px;
-    font-family: Arial, Helvetica, sans-serif;
-    justify-content: center;
-    font-size: 100%;
-    padding: 6px;
-    margin: 5px;
-    top: 30%;
-    left: 34.5%;
-    width: 30%;
-    max-width: 50%;
-    height: 20%;
-    overflow: auto;
-
-    z-index: 10;
-}
-
-.announcements {
-    position: absolute;
-
-    border: 3px solid;
-    border-color: #00953B;
-    background-color: #00953B;
-    color: white;
-    text-shadow: black 0px 0px 3px;
-    font-family: Arial, Helvetica, sans-serif;
-    justify-content: center;
-    font-size: 100%;
-    padding: 6px;
-    margin: 5px;
-    top: 45%;
-    right: 7%;
-    width: 17%;
-    max-width: 50%;
-    height: 17%;
-    overflow: auto;
-
-    z-index: 10;
-}
-
-.quickLinks {
-    position: absolute;
-
-    border: 3px solid;
-    border-color: #00953B;
-    background-color: #00953B;
-    color: white;
-    text-shadow: black 0px 0px 3px;
-    font-family: Arial, Helvetica, sans-serif;
-    justify-content: center;
-    font-size: 100%;
-    padding: 6px;
-    margin: 5px;
-    top: 45%;
-    left: 7%;
-    width: 17%;
-    max-width: 50%;
-    height: 17%;
-    overflow: auto;
-
-    z-index: 10;
-}
-
-.mainInfo {
-    position: absolute;
-
-    border: 3px solid;
-    border-color: #00953B;
-    background-color: #00953B;
-    color: white;
-    text-shadow: black 0px 0px 3px;
-    font-family: Arial, Helvetica, sans-serif;
-    justify-content: center;
-    font-size: 100%;
-    padding: 6px;
-    margin: 5px;
-    top: 55%;
-    left: 34.5%;
-    width: 30%;
-    max-width: 50%;
-    height: 21%;
-    overflow: auto;
-
-    z-index: 10;
-}   
 
 /* home page mobile */
 @media (max-width: 650px) {
@@ -444,60 +453,6 @@ video {
         left: 0;
         z-index:-1;
     }
-    
-    .whyUs {
-        justify-content: center;
-        font-size: 80%;
-        padding: 6px;
-        margin: 5px;
-        top: 5%;
-        left: 21%;
-        width: 80%;
-        max-width: 50%;
-        height: 20%;
-        overflow: auto;
-    }
-
-    .announcements {
-        width: 20%;
-        overflow: auto;
-        font-size: 80%;
-        top: 30%;
-        right: 8%;
-        width: 30%;
-        max-width: 50%;
-        height: 20%;
-
-    }
-
-    .announcements.u {
-        font-size: 50%;
-    }
-
-    .quickLinks {
-        width: 20%;
-        overflow: auto;
-        font-size: 80%;
-        top: 30%;
-        left: 7%;
-        width: 30%;
-        max-width: 50%;
-        height: 20%;
-    }
-
-    .mainInfo {
-        justify-content: center;
-        font-size: 80%;
-        padding: 6px;
-        margin: 5px;
-        bottom: 0;
-        left: 21%;
-        width: 80%;
-        max-width: 50%;
-        height: 30%;
-        overflow: auto;
-    }
-}
 
 /* Athletics Page */
 
@@ -514,7 +469,6 @@ video {
     position: relative;
     justify-content: center;
     text-align: center;
-    /* font-family: ; */
     font-size: 110%;
     top: 15%;
     width: 24%;
