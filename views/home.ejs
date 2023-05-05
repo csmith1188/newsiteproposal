@@ -1,4 +1,93 @@
 <html>
+
+<%- include('partials/_header') -%>
+
+  <!--<link rel="stylesheet" href="home.css">-->
+  <link rel="stylesheet" href="styles.css">
+
+  <head>
+
+    <title>York County School of Technology</title>
+    <link rel="icon" type="imagex-icon" href="/imgs/ytechIcon.ico">
+
+  </head>
+
+  <body>
+    <div class="home-container">
+      <center>
+
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family: Verdana, sans-serif;
+          }
+
+          .mySlides {
+            display: none;
+            height: x;
+          }
+
+          img {
+            vertical-align: middle;
+          }
+
+          /* Slideshow container */
+          .slideshow-container {
+            max-width: 1500px;
+            position: relative;
+            margin: auto;
+          }
+
+          /* Next & previous buttons */
+          .prev,
+          .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            border-style: groove;
+            background-color: #1b1b1b;
+          }
+
+          /* Move the "right arrow" to the right */
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
+
+          /* Move the "left arrow" to the left */
+          .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+          }
+
+          .active,
+          .dot:hover {
+            background-color: #004d0a;
+          }
+
+          /* Caption text */
+          .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+          }
+
     <%- include('partials/_header') -%>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
@@ -26,6 +115,7 @@
                     <p>When our students leave York Tech, they are ready to take on the workforce head-on and be prepared for what comes ahead of them. </p>
                 </div>
 
+
                 <div class="quickLinks">
                     <u><h3>Quick Links</h3></u>
                     <a href="/newhome">new home page</a>
@@ -45,6 +135,187 @@
                     <br>
                     <a href="/newhome">new home page</a>
                 </div>
+
+          /* The dots/bullets/indicators */
+          .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
+
+          .active {
+            background-color: #1b1b1b;
+          }
+
+          /* Fading animation */
+          .fade {
+            animation-name: fade;
+            animation-duration: 10.0s;
+          }
+
+          @keyframes fade {
+            from {
+              opacity: .8
+            }
+
+            to {
+              opacity: 1
+            }
+          }
+
+          /* On smaller screens, decrease text size */
+          @media only screen and (max-width: 300px) {
+            .text {
+              font-size: 11px
+            }
+          }
+        </style>
+        </head>
+
+
+
+
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <img src="/imgs/ytechstudents4.jpeg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="/imgs/ytechstudents.jpeg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="/imgs/ytechstudents3.jpeg" style="width:100%">
+          </div>
+
+        </div>
+
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="minusSlides()">❮</a>
+        <a class="next" onclick="plusSlides()">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <h2>Spartan Pride</h2>
+
+
+    <div class="whyUs">
+      <u>
+        <h3>Why York Tech?</h3>
+      </u>
+      <p>Why York Tech? Here we teach our students how to be career ready and how to be proffessional.</p>
+      <p>When our students leave York Tech, they are ready to take on the workforce headon and be prepared for what
+        comes ahead of them. </p>
+    </div>
+
+
+
+
+
+    <div class="mainInfo">
+      <u>
+        <h3>Information</h3>
+      </u>
+      <p>2022-23 School Year Calender</p>
+      <p>Free and Reduced Lunch</p>
+      <p>Comcast Internet for Your Home</p>
+      <p>Tech Gear Online Store</p>
+    </div>
+
+
+
+
+    <div class="announcements">
+      <u>
+        <h3>Announcements</h3>
+      </u>
+      <a href="/newhome">new home page</a>
+      <br>
+      <a href="/newhome">new home page</a>
+      <br>
+      <a href="/newhome">new home page</a>
+    </div>
+
+
+
+    <div class="quickLinks">
+      <u>
+        <h3>Quick Links</h3>
+      </u>
+      <a href="/newhome">new home page</a>
+      <br>
+      <a href="/newhome">new home page</a>
+      <br>
+      <a href="/newhome">new home page</a>
+      <br>
+      <a href="/newhome">new home page</a>
+    </div>
+    </center>
+    </div>
+
+
+    <script>
+      let slideIndex = 1;
+      let timer;
+
+      showSlides(slideIndex);
+
+      function plusSlides() {
+        showSlides(slideIndex += 1);
+        if (slideIndex == 4) slideIndex = 1;
+      }
+
+      function minusSlides() {
+        showSlides(slideIndex -= 1);
+        if (slideIndex == 0) slideIndex = 3;
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          plusSlides();
+        }, 10000);
+      }
+
+
+    </script>
+
+  </body>
+  <%- include('partials/_footer') -%>
 
                 <div class="mainInfo">
                     <u><h3>Information</h3></u>
