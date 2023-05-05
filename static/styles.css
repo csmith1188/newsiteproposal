@@ -396,7 +396,7 @@ footer a {
     justify-content: center;
 
     width: 100%;  /* edit this percentage value to change the width of the video on the page */
-    height: 90%; /* edit this percentage value to change the height of the video on the page */
+    height: 70%; /* edit this percentage value to change the height of the video on the page */
 
     background-color: #bebebe;
     font-size: 20;
@@ -463,7 +463,7 @@ video {
     text-align: center;
     font-size: 110%;
     top: 15%;
-    width: 24%;
+    width: 30%;
     height: auto;
     margin: auto;
     margin-top: 2%;
@@ -481,7 +481,7 @@ video {
     margin: auto;
     height: auto;
     max-width: 30%;
-    width: 25%;
+    width: 28%;
     top: 15%;
     padding: 2%;
     margin-bottom: -2%;
