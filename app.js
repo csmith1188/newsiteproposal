@@ -235,5 +235,9 @@ app.get('/calander', function(req,res){
   res.render('calander.ejs')
 })
 
+app.get('/template', function(req,res){
+  res.render('template.ejs')
+})
+
 //convertExcelFileToJsonUsingXlsx()
 

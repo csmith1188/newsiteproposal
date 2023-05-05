@@ -421,7 +421,7 @@ video {
 
 /* home page mobile */
 @media (max-width: 650px) {
-
+}
     .home-container {
         position: relative;
         display: auto;
@@ -559,3 +559,19 @@ video {
     }
 }
 
+
+/* Template for pages CSS */
+
+.left-container {
+    float: left;
+    margin-left: 50px;
+}
+
+.right-container {
+    float: right;
+    margin-right: 50px;
+}
+
+.middle-container {
+text-align: center;
+}
