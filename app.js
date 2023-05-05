@@ -226,13 +226,17 @@ app.get('/mediaCenter', function (req,res) {
 
 
 //athletics
-app.get('/athletics', function(req,res){
-    res.render('athleticsHome.ejs')
+app.get('/sports', function(req,res){
+    res.render('sports.ejs')
 })
 
 //calander
 app.get('/calander', function(req,res){
   res.render('calander.ejs')
+})
+
+app.get('/template', function(req,res){
+  res.render('template.ejs')
 })
 
 //convertExcelFileToJsonUsingXlsx()
