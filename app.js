@@ -226,7 +226,7 @@ app.get('/mediaCenter', function (req,res) {
 
 
 //athletics
-app.get('/athletics', function(req,res){
+app.get('/sports', function(req,res){
     res.render('athleticsHome.ejs')
 })
 

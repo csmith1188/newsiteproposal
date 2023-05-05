@@ -114,7 +114,6 @@ font-size: x-large;
     padding-bottom: 150px;
     padding-top:1px;
     padding-left: 10px;
-    
 }
 
 .header-h1 {
@@ -290,7 +289,7 @@ footer a {
     justify-content: center;
 
     width: 100%;  /* edit this percentage value to change the width of the video on the page */
-    height: 90%; /* edit this percentage value to change the height of the video on the page */
+    height: 80%; /* edit this percentage value to change the height of the video on the page */
 
     background-color: #bebebe;
     font-size: 20;
@@ -327,7 +326,7 @@ video {
     font-size: 100%;
     padding: 6px;
     margin: 5px;
-    top: 35%;
+    top: 30%;
     left: 34.5%;
     width: 30%;
     max-width: 50%;
@@ -396,7 +395,7 @@ video {
     font-size: 100%;
     padding: 6px;
     margin: 5px;
-    top: 62%;
+    top: 55%;
     left: 34.5%;
     width: 30%;
     max-width: 50%;
@@ -492,7 +491,6 @@ video {
         max-width: 50%;
         height: 30%;
         overflow: auto;
-
     }
 }
 
@@ -511,6 +509,7 @@ video {
     position: relative;
     justify-content: center;
     text-align: center;
+    /* font-family: ; */
     font-size: 110%;
     top: 15%;
     width: 24%;
