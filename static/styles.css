@@ -605,3 +605,113 @@ video {
     }
 }
 
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+  }
+
+  .mySlides {
+    display: none;
+    height: x;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1500px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    border-style: groove;
+    background-color: #1b1b1b;
+  }
+
+  /* Move the "right arrow" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* Move the "left arrow" to the left */
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #004d0a;
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  
+          /* The dots/bullets/indicators */
+          .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
+
+          .active {
+            background-color: #1b1b1b;
+          }
+
+          /* Fading animation */
+          .fade {
+            animation-name: fade;
+            animation-duration: 10.0s;
+          }
+
+          @keyframes fade {
+            from {
+              opacity: .8
+            }
+
+            to {
+              opacity: 1
+            }
+          }
+
+          /* On smaller screens, decrease text size */
+          @media only screen and (max-width: 300px) {
+            .text {
+              font-size: 11px
+            }
+          }
+        
