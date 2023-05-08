@@ -1,20 +1,13 @@
 <html>
 
-<%- include('partials/_header') -%>
 
   <!--<link rel="stylesheet" href="home.css">-->
   <link rel="stylesheet" href="styles.css">
 
-  <head>
-
-    <title>York County School of Technology</title>
-    <link rel="icon" type="imagex-icon" href="/imgs/ytechIcon.ico">
-
-  </head>
 
   <body>
     <div class="home-container">
-      <center>
+     
 
    
     <link rel="stylesheet" href="styles.css"/>
@@ -24,7 +17,6 @@
 </head>
     <body>
         <div class="home-container">
-            <center>
                 
                 <div class="video-background">
                     <div id="video">
@@ -62,11 +54,16 @@
                     <br>
                     <a href="/newhome">new home page</a>
                 </div>
-        </head>
 
-
-
-
+  <div class="video-container">
+    <div id="video">
+        <video controls muted loop preload playsinline autoplay>
+            <!-- <source src="/videos/videoName.mp4" type="video/mp4"> -->
+            <source src="/videos/mr_saia.mp4" type="video/mp4">
+        </video>
+    </div>
+  </div>
+    
         <div class="slideshow-container">
 
           <div class="mySlides fade">
@@ -96,64 +93,6 @@
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
     </div>
-
-    <h2>Spartan Pride</h2>
-
-
-    <div class="whyUs">
-      <u>
-        <h3>Why York Tech?</h3>
-      </u>
-      <p>Why York Tech? Here we teach our students how to be career ready and how to be proffessional.</p>
-      <p>When our students leave York Tech, they are ready to take on the workforce headon and be prepared for what
-        comes ahead of them. </p>
-    </div>
-
-
-
-
-
-    <div class="mainInfo">
-      <u>
-        <h3>Information</h3>
-      </u>
-      <p>2022-23 School Year Calender</p>
-      <p>Free and Reduced Lunch</p>
-      <p>Comcast Internet for Your Home</p>
-      <p>Tech Gear Online Store</p>
-    </div>
-
-
-
-
-    <div class="announcements">
-      <u>
-        <h3>Announcements</h3>
-      </u>
-      <a href="/newhome">new home page</a>
-      <br>
-      <a href="/newhome">new home page</a>
-      <br>
-      <a href="/newhome">new home page</a>
-    </div>
-
-
-
-    <div class="quickLinks">
-      <u>
-        <h3>Quick Links</h3>
-      </u>
-      <a href="/newhome">new home page</a>
-      <br>
-      <a href="/newhome">new home page</a>
-      <br>
-      <a href="/newhome">new home page</a>
-      <br>
-      <a href="/newhome">new home page</a>
-    </div>
-    </center>
-    </div>
-
 
     <script>
       let slideIndex = 1;
@@ -202,22 +141,5 @@
 
     </script>
 
-  </body>
-  <%- include('partials/_footer') -%>
-
-                <div class="mainInfo">
-                    <u><h3>Information</h3></u>
-                    <p>2022-23 School Year Calendar</p>
-                    <p>Free and Reduced Lunch</p>
-                    <p>Comcast Internet for Your Home</p>
-                    <p>Tech Gear Online Store</p>
-                </div>
-
-            </center>
-        </div>
-
-    </body>
-
-    <%- include('partials/_footer') -%>
 
 </html>
