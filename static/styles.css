@@ -561,17 +561,27 @@ video {
 
 
 /* Template for pages CSS */
+.container{
+    display: flex;
+    justify-content: space-around;
+    }
 
 .left-container {
     float: left;
-    margin-left: 50px;
-}
+    border-style: solid;
+    border-width: 3px;
 
-.right-container {
-    float: right;
-    margin-right: 50px;
 }
 
 .middle-container {
-text-align: center;
+    text-align: center;
+
+    }
+    
+
+.right-container {
+    float: right;
+    border-style: solid;
+    border-width: 3px;
+
 }

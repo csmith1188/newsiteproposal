@@ -160,7 +160,7 @@ function shopTemps() {
         let pageData = words[i]
         
         app.get(`${pageData["Endpoint"]}`, function (req,res) {
-            res.render('shopTemplate.ejs', {
+            res.render('template.ejs', {
                 pageTitle: pageData["Page Header"],
                 pageInfo: pageData["Page Text"],
                 pageVideo: pageData["Page Video"]
@@ -235,6 +235,7 @@ app.get('/calander', function(req,res){
   res.render('calander.ejs')
 })
 
+//this is a template page for testing purposes it may scar you when you go to the template page though
 app.get('/template', function(req,res){
   res.render('template.ejs')
 })
