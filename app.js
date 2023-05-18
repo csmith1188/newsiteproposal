@@ -12,7 +12,6 @@ const path = require('path')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
 var fs = require('fs');
-const { json } = require('body-parser');
 
 //  _____ ______ _______ _______ _____ _   _  _____  _____ 
 ///  ____|  ____|__   __|__   __|_   _| \ | |/ ____|/ ____|
@@ -31,11 +30,7 @@ var port = 1010
 var ip = '127.0.0.1' //I don't know why this is here or if we need it. 
 //listen server
 app.listen(port, function () {
-  console.log("Listening on port " + port)
-
-
-  convertExcelFileToJsonUsingXlsx('excel_Sheets/shops.xlsx', 'data.json') //this could likely be done in a function or something that allows pages to get updated and lets the server run continuously 
-  //convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
+  console.log("enter your browser and enter localhost:" + port + " in the URL bar")
 })
 
 // __  __          _____       _____        _____ ______ 
@@ -75,9 +70,9 @@ function fetchGeoJson(relationId) {
   });
 }
 
-app.get('/districts', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
-    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6] = await Promise.all([ //Add any new osm relation here
+    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7] = await Promise.all([ //Add any new osm relation here
       //Add any new osm relation here
       fetchGeoJson(417442), //York County
       fetchGeoJson(15798307), //York City School District
@@ -85,9 +80,10 @@ app.get('/districts', async (req, res) => {
       fetchGeoJson(15805026), //West York Area School District
       fetchGeoJson(15806951), //Central york School District
       fetchGeoJson(15807383), //Dallastown Area School District
+      fetchGeoJson(15831564), //Spring Grove Area School District
     ]);
 
-    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6 });//Add any new osm relation here
+    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7});//Add any new osm relation here
   } catch (err) {
     console.error(err);
     res.status(500).send('An error occurred');
@@ -95,149 +91,4 @@ app.get('/districts', async (req, res) => {
 });
 
 
-
-// ________   _______ ______ _      
-//|  ____\ \ / / ____|  ____| |     
-//| |__   \ V / |    | |__  | |     
-//|  __|   > <| |    |  __| | |     
-//| |____ / . \ |____| |____| |____ 
-//|______/_/ \_\_____|______|______|
-//All the code that relates to using Excel. This is typically used for anything that needs to be changed by an admin. 
-
-//has two arguments. filepath is for what file is being scanned, and sendTo is where JSON data is being sent to
-const xlsx = require('xlsx');
-
-function convertExcelFileToJsonUsingXlsx(filepath, sendTo) {
-
-    // Read the file using pathname
-    const file = xlsx.readFileSync(filepath);
-  
-    // Grab the sheet info from the file
-    const sheetNames = file.SheetNames;
-    const totalSheets = sheetNames.length;
-  
-    // Variable to store our data
-    let parsedData = [];
-  
-    // Loop through sheets
-    for (let i = 0; i < totalSheets; i++) {
-  
-        // Convert to json using xlsx
-        const tempData = xlsx.utils.sheet_to_json(file.Sheets[sheetNames[i]]);
-
-    
-  
-        // Add the sheet's json to our data array
-        parsedData.push(...tempData);
-    }
-  
-   // call a function to save the data in a json file
-  
-
-   generateJSONFile(parsedData, sendTo);
-   shopTemps(parsedData)
-
-  }
-
-  function generateJSONFile(data, sendTo) {
-    try {
-    fs.writeFileSync(sendTo, JSON.stringify(data))
-    }
-
-     
-    
-  
-  catch (err) {
-    console.error(err)
-    }
-  }
-
-
-function shopTemps() {
-    const rawData = fs.readFileSync('data.json', 'utf8');
-    let words = JSON.parse(rawData)
-    for (let i = 0; i < words.length; i++) {
-        let pageData = words[i]
-        
-        app.get(`${pageData["Endpoint"]}`, function (req,res) {
-            res.render('shopTemplate.ejs', {
-                pageTitle: pageData["Page Header"],
-                pageInfo: pageData["Page Text"],
-                pageVideo: pageData["Page Video"]
-            })
-        })
-    }
-
-}
-
-//career programs page
-app.get('/career', function (req,res) {
-  var words = JSON.parse(fs.readFileSync('data.json', 'utf8'));
-  var headerList = []
-  var endpointList = []
-  var tagList = []
-
-  for (let i = 0; i < words.length; i++) {
-      headerList.push(words[i]["Page Header"]);
-      endpointList.push(words[i]["Endpoint"])
-      tagList.push(words[i]["Header Tag"])
-  }
-  res.render('career_programs.ejs', {
-      headers: headerList,
-      endpoints: endpointList,
-      tags: tagList
-  })
-})
-
-
-
-
-// ____           _____ _____ _____      _____        _____ ______  _____ 
-//|  _ \   /\    / ____|_   _/ ____|    |  __ \ /\   / ____|  ____|/ ____|
-//| |_) | /  \  | (___   | || |         | |__) /  \ | |  __| |__  | (___  
-//|  _ < / /\ \  \___ \  | || |         |  ___/ /\ \| | |_ |  __|  \___ \ 
-//| |_) / ____ \ ____) |_| || |____     | |  / ____ \ |__| | |____ ____) |
-//|____/_/    \_\_____/|_____\_____|    |_| /_/    \_\_____|______|_____/ 
-//any page that does not have very much code. These are likely pages that are not yet finished. 
-//any Misc. Page should probably also go here. 
-
-//home 
-app.get('/', function (req,res) {
-    res.render('home.ejs')
-})
-
-//newhome 
-app.get('/newhome', function (req,res) {
-    res.render('newhome.ejs')
-})
-
-
-//parents and caregivers
-app.get('/parents', function (req,res) {
-    res.render('parents.ejs')
-})
-
-//media center
-
-//This page is not needed. 
-app.get('/mediaCenter', function (req,res) {
-    res.render('mediaCenter.ejs')
-})
-
-
-//athletics
-app.get('/sports', function(req,res){
-    res.render('sports.ejs')
-})
-
-//calander
-app.get('/calander', function(req,res){
-  res.render('calander.ejs')
-})
-
-app.get('/template', function(req,res){
-  res.render('template.ejs')
-})
-
-//convertExcelFileToJsonUsingXlsx()
 

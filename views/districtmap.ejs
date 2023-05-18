@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/_header') -%>
+
 <link rel="stylesheet" href="styles.css">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -32,12 +32,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var marker = L.marker([39.9302254,-76.6869776]).addTo(map)
     .bindPopup("York County School of Technology")
     .openPopup();
-/*
-var popup = L.popup()
-    .setLatLng([39.9302254,-76.6869776])
-    .setContent("York County School of Technology")
-    .openOn(map);
-*/
+
 // Add the York County GeoJSON layer for York County
 let geojson1;
 try {
@@ -47,6 +42,9 @@ try {
 }
 if (geojson1) {
   L.geoJSON(geojson1, {
+    filter: function(feature) {
+      return feature.id !== 53549532; // Hide the node with id 53549532
+    },
     style: function(feature) {
       return {
         color: '#095540', // green outline
@@ -145,8 +143,26 @@ if (geojson6) {
     }
   }).addTo(map);
 }
+
+// Add the GeoJSON layer for Spring Grove Area School District
+let geojson7;
+try {
+  geojson7 = JSON.parse('<%- JSON.stringify(geojson7) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson7) {
+  L.geoJSON(geojson7, {
+    style: function(feature) {
+      return {
+        color: '#003087', // blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
     </script>
 </body>
-<%- include('partials/_footer') -%>
+
 </html>
 
