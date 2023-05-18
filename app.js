@@ -41,14 +41,22 @@ app.listen(port, function () {
 //|_|  |_/_/    \_\_|         |_| /_/    \_\_____|______|
 //All the code that is required for OpenStreetMap to work on /districts
 
+// Import required libraries
 const osmtogeojson = require('osmtogeojson');
 const https = require('https');
 
+/**
+ * Fetches the GeoJSON data for a given OSM relation ID.
+ * @param {number} relationId - The OSM relation ID.
+ * @returns {Promise<Object>} - A promise that resolves to the GeoJSON data.
+ */
 function fetchGeoJson(relationId) {
+  // Create the Overpass query to retrieve the GeoJSON data for the relation ID
   const query = `[out:json];relation(${relationId});out geom;`;
   const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
 
   return new Promise((resolve, reject) => {
+    // Make an HTTPS request to the Overpass API
     https.get(url, (response) => {
       let data = '';
 
@@ -58,6 +66,7 @@ function fetchGeoJson(relationId) {
 
       response.on('end', () => {
         try {
+          // Convert the received data to GeoJSON using osmtogeojson library
           const geojson = osmtogeojson(JSON.parse(data));
           resolve(geojson);
         } catch (err) {
@@ -69,6 +78,7 @@ function fetchGeoJson(relationId) {
     });
   });
 }
+
 
 app.get('/', async (req, res) => {
   try {
@@ -91,4 +101,158 @@ app.get('/', async (req, res) => {
 });
 
 
+
+
+// ________   _______ ______ _      
+//|  ____\ \ / / ____|  ____| |     
+//| |__   \ V / |    | |__  | |     
+//|  __|   > <| |    |  __| | |     
+//| |____ / . \ |____| |____| |____ 
+//|______/_/ \_\_____|______|______|
+//All the code that relates to using Excel. This is typically used for anything that needs to be changed by an admin. 
+
+//has two arguments. filepath is for what file is being scanned, and sendTo is where JSON data is being sent to
+// Import the xlsx library
+const xlsx = require('xlsx');
+
+/**
+ * Convert an Excel file to JSON using the xlsx library.
+ * @param {string} filepath - The path of the Excel file.
+ * @param {string} sendTo - The destination to save the JSON file.
+ */
+function convertExcelFileToJsonUsingXlsx(filepath, sendTo) {
+  // Read the Excel file from the given filepath
+  const file = xlsx.readFileSync(filepath);
+  
+  // Retrieve the sheet names from the file
+  const sheetNames = file.SheetNames;
+  const totalSheets = sheetNames.length;
+  
+  // Variable to store the parsed data
+  let parsedData = [];
+  
+  // Loop through each sheet
+  for (let i = 0; i < totalSheets; i++) {
+    // Convert the sheet to JSON using xlsx
+    const tempData = xlsx.utils.sheet_to_json(file.Sheets[sheetNames[i]]);
+    
+    // Add the sheet's JSON to the parsedData array
+    parsedData.push(...tempData);
+  }
+  
+  // Generate a JSON file from the parsed data and save it to the specified destination
+  generateJSONFile(parsedData, sendTo);
+  // Process the parsed data to render shop templates
+  shopTemps(parsedData);
+}
+
+/**
+ * Generate a JSON file from the given data and save it to the specified destination.
+ * @param {Array} data - The data to be converted to JSON.
+ * @param {string} sendTo - The destination to save the JSON file.
+ */
+function generateJSONFile(data, sendTo) {
+  try {
+    // Write the data as JSON to the specified destination
+    fs.writeFileSync(sendTo, JSON.stringify(data));
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+/**
+ * Process the parsed data to render shop templates.
+ */
+function shopTemps() {
+  // Read the JSON file containing the parsed data
+  const rawData = fs.readFileSync('data.json', 'utf8');
+  let words = JSON.parse(rawData);
+
+  // Iterate over each item in the parsed data
+  for (let i = 0; i < words.length; i++) {
+    let pageData = words[i];
+        
+    // Set up an endpoint for each page data item
+    app.get(`${pageData["Endpoint"]}`, function (req, res) {
+      // Render the shop template with the page data
+      res.render('shopTemplate.ejs', {
+        pageTitle: pageData["Page Header"],
+        pageInfo: pageData["Page Text"],
+        pageVideo: pageData["Page Video"]
+      });
+    });
+  }
+}
+
+
+//career programs page
+app.get('/career', function (req,res) {
+  var words = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+  var headerList = []
+  var endpointList = []
+  var tagList = []
+
+  for (let i = 0; i < words.length; i++) {
+      headerList.push(words[i]["Page Header"]);
+      endpointList.push(words[i]["Endpoint"])
+      tagList.push(words[i]["Header Tag"])
+  }
+  res.render('career_programs.ejs', {
+      headers: headerList,
+      endpoints: endpointList,
+      tags: tagList
+  })
+})
+
+
+
+
+// ____           _____ _____ _____      _____        _____ ______  _____ 
+//|  _ \   /\    / ____|_   _/ ____|    |  __ \ /\   / ____|  ____|/ ____|
+//| |_) | /  \  | (___   | || |         | |__) /  \ | |  __| |__  | (___  
+//|  _ < / /\ \  \___ \  | || |         |  ___/ /\ \| | |_ |  __|  \___ \ 
+//| |_) / ____ \ ____) |_| || |____     | |  / ____ \ |__| | |____ ____) |
+//|____/_/    \_\_____/|_____\_____|    |_| /_/    \_\_____|______|_____/ 
+//any page that does not have very much code. These are likely pages that are not yet finished. 
+//any Misc. Page should probably also go here. 
+
+//home 
+app.get('/', function (req,res) {
+    res.render('home.ejs')
+})
+
+//newhome 
+app.get('/newhome', function (req,res) {
+    res.render('newhome.ejs')
+})
+
+
+//parents and caregivers
+app.get('/parents', function (req,res) {
+    res.render('parents.ejs')
+})
+
+//media center
+
+//This page is not needed. 
+app.get('/mediaCenter', function (req,res) {
+    res.render('mediaCenter.ejs')
+})
+
+
+//athletics
+app.get('/sports', function(req,res){
+    res.render('sports.ejs')
+})
+
+//calander
+app.get('/calander', function(req,res){
+  res.render('calander.ejs')
+})
+
+app.get('/template', function(req,res){
+  res.render('template.ejs')
+})
+
+//convertExcelFileToJsonUsingXlsx()
 
