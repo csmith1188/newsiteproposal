@@ -114,7 +114,6 @@ font-size: x-large;
     padding-bottom: 150px;
     padding-top:1px;
     padding-left: 10px;
-    
 }
 
 .header-h1 {
@@ -255,112 +254,7 @@ footer a {
 
   }
 
-/* main page*/ 
-
-* {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: Verdana, sans-serif;
-  }
-
-  /* slideshow css */
-  .mySlides {
-    display: none;
-    height: x;
-  }
-
-  img {
-    vertical-align: middle;
-  }
-
-  
-  .slideshow-container {
-    max-width: 1500px;
-    position: relative;
-    margin: auto;
-  }
-
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    border-style: groove;
-    background-color: #1b1b1b;
-  }
-
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .active,
-  .dot:hover {
-    background-color: #004d0a;
-  }
-
-  .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-  }
-
-   .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-
-  .active {
-    background-color: #1b1b1b;
-  }
-
-  .fade {
-    animation-name: fade;
-    animation-duration: 10.0s;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: .8
-    }
-
-    to {
-      opacity: 1
-    }
-  }
-
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .text {
-      font-size: 11px
-    }
-  }
-/* end slideshow css */
+/* main page please fix this parker = bad at pro gamming*/ 
 
 /*District Map CSS*/
 
@@ -383,8 +277,10 @@ footer a {
     }
 }
 
-/* background video css */
-.video-container { 
+/* main page */
+
+/* background video */
+.video-background { 
     position: relative;
     overflow: hidden;
     display: flex;
@@ -393,7 +289,7 @@ footer a {
     justify-content: center;
 
     width: 100%;  /* edit this percentage value to change the width of the video on the page */
-    height: 70%; /* edit this percentage value to change the height of the video on the page */
+    height: 80%; /* edit this percentage value to change the height of the video on the page */
 
     background-color: #bebebe;
     font-size: 20;
@@ -402,7 +298,7 @@ footer a {
     border: 2px solid #a8a8a8;
     border-left: none;
     border-right: none;
-    bottom: 0;
+    
     z-index:-1;
 }
 
@@ -411,22 +307,124 @@ video {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    bottom: 0;
+    top: 0;
     left: 0;
     z-index:-1;
 }
 
-/* home page video mobile */
+/* home page div layers */
+.whyUs {
+    position: absolute;
+
+    border: 3px solid;
+    border-color: #00953B;
+    background-color: #00953B;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 100%;
+    padding: 6px;
+    margin: 5px;
+    top: 30%;
+    left: 34.5%;
+    width: 30%;
+    max-width: 50%;
+    height: 20%;
+    overflow: auto;
+
+    z-index: 10;
+}
+
+.announcements {
+    position: absolute;
+
+    border: 3px solid;
+    border-color: #00953B;
+    background-color: #00953B;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 100%;
+    padding: 6px;
+    margin: 5px;
+    top: 45%;
+    right: 7%;
+    width: 17%;
+    max-width: 50%;
+    height: 17%;
+    overflow: auto;
+
+    z-index: 10;
+}
+
+.quickLinks {
+    position: absolute;
+
+    border: 3px solid;
+    border-color: #00953B;
+    background-color: #00953B;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 100%;
+    padding: 6px;
+    margin: 5px;
+    top: 45%;
+    left: 7%;
+    width: 17%;
+    max-width: 50%;
+    height: 17%;
+    overflow: auto;
+
+    z-index: 10;
+}
+
+.mainInfo {
+    position: absolute;
+
+    border: 3px solid;
+    border-color: #00953B;
+    background-color: #00953B;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 100%;
+    padding: 6px;
+    margin: 5px;
+    top: 55%;
+    left: 34.5%;
+    width: 30%;
+    max-width: 50%;
+    height: 21%;
+    overflow: auto;
+
+    z-index: 10;
+}   
+
+/* home page mobile */
 @media (max-width: 650px) {
 
-    .video-container {
+    .home-container {
+        position: relative;
+        display: auto;
+        justify-content: center;
+        align-items: center;
+    
+        z-index: 1;
+    }
+
+    .video-background {
         position: relative;
         overflow: hidden;
         display: flex;
         text-align: center;
         align-items: center;
         justify-content: center;
-        width: auto; /* edit this percentage value to change the width of the video on the page */
+        width: 100%; /* edit this percentage value to change the width of the video on the page */
         height: 80%; /* edit this percentage value to change the height of the video on the page */
         background-color: #9c9c9c;
         z-index:-1;
@@ -438,21 +436,70 @@ video {
         width: 100%;
         height: 100%;
         top: 0;
-        margin: auto;
+        left: 0;
         z-index:-1;
     }
+    
+    .whyUs {
+        justify-content: center;
+        font-size: 80%;
+        padding: 6px;
+        margin: 5px;
+        top: 5%;
+        left: 21%;
+        width: 80%;
+        max-width: 50%;
+        height: 20%;
+        overflow: auto;
+    }
+
+    .announcements {
+        width: 20%;
+        overflow: auto;
+        font-size: 80%;
+        top: 30%;
+        right: 8%;
+        width: 30%;
+        max-width: 50%;
+        height: 20%;
+
+    }
+
+    .announcements.u {
+        font-size: 50%;
+    }
+
+    .quickLinks {
+        width: 20%;
+        overflow: auto;
+        font-size: 80%;
+        top: 30%;
+        left: 7%;
+        width: 30%;
+        max-width: 50%;
+        height: 20%;
+    }
+
+    .mainInfo {
+        justify-content: center;
+        font-size: 80%;
+        padding: 6px;
+        margin: 5px;
+        bottom: 0;
+        left: 21%;
+        width: 80%;
+        max-width: 50%;
+        height: 30%;
+        overflow: auto;
+    }
 }
-/* end background video css */
 
-
-/* Athletics Page Css*/
+/* Athletics Page */
 
 .sports-container {
-    display: block;
     position: relative;
     justify-content: center;
     align-items: center;
-    font-size: 95%;
     top: 0;
     z-index: 1;
     margin: 1%;
@@ -462,14 +509,47 @@ video {
     position: relative;
     justify-content: center;
     text-align: center;
+    /* font-family: ; */
     font-size: 110%;
     top: 15%;
-    max-width: 80%;
+    width: 24%;
     height: auto;
     margin: auto;
     margin-top: 2%;
     margin-bottom: 2%;
     overflow: auto;
+}
+
+.divider {
+    position: relative;
+    align-self: center;
+    border-top: 2px solid rgb(167, 167, 167);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin: auto;
+    height: auto;
+    max-width: 30%;
+    width: 25%;
+    top: 15%;
+    padding: 2%;
+    margin-bottom: -2%;
+}
+
+.mini-divider {
+    position: relative;
+    align-self: center;
+    border-top: 2px solid rgb(167, 167, 167);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin: auto;
+    height: auto;
+    max-width: 20%;
+    width: 15%;
+    padding: 2%;
+    margin-bottom: -4%;
+    margin-top: 1%;
 }
 
 .sports-sections {
@@ -483,64 +563,6 @@ video {
     font-size: 115%;
 }
 
-.divider {
-    position: relative;
-    align-self: center;
-    border-top: 2px solid rgb(167, 167, 167);
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    margin: auto;
-    height: auto;
-    width: 28%;
-    min-width: 25%;
-    top: 15%;
-    padding: 2%;
-    margin-bottom: -2%;
-}
-
-.mini-divider {
-    position: relative;
-    align-self: center;
-    border-top: 1.5px solid rgb(167, 167, 167);
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    margin: auto;
-    height: auto;
-    max-width: 20%;
-    width: 15%;
-    padding: 2%;
-    margin-bottom: -4%;
-    margin-top: 1%;
-}
-
-.vertical-divider {
-    border-left: 1.5px solid rgb(167, 167, 167);
-    width: auto;
-    height: auto;
-}
-
-.admission {
-    display: flex;
-    justify-content: center;
-}
-
-#gamePrices {
-    margin: 1%;
-}
-
-/* bottom of page */
-.asterisk {
-    font-weight: bold;
-    font-style: italic;
-    color: #696969;
-    margin: auto;
-    text-align: center;
-    justify-content: center;
-    bottom: 2%;
-}
-
 /* Athletics page mobile */
 
 @media (max-width: 650px) {
@@ -550,71 +572,30 @@ video {
 
     .athletics-summary {
         overflow: auto;
-        font-size: 95%;
+        font-size: 85%;
+        width: 40%;
         height: auto;
         margin: auto;
-        max-width: 75%;
+
         margin-bottom: 3%;
     }
 
     .divider {
-        margin: auto;
+        margin:auto;
         height: auto;
-        max-width: 70%;
-        width: 60%;
+        max-width: 60%;
+        width: 50%;
     }
 
     .mini-divider {
-        margin: auto;
+        margin:auto;
         height: auto;
         max-width: 60%;
-        width: 40%;
-        border-top: 1.5px solid rgb(167, 167, 167);
-    }
-
-    .vertical-divider {
-        border-left: 2px solid rgb(167, 167, 167);
+        width: 30%;
     }
 
     .sports-sections {
         margin: auto;
         height: auto;
-        font-size: 105%;
-        padding-bottom: 2%;
     }
-
-
-    /* bottom of page */
-    .asterisk {
-        font-weight: lighter;
-    }
-}
-/* end athletics page css */
-
-
-
-/* Template for pages CSS */
-.container{
-    display: flex;
-    justify-content: space-around;
-    }
-
-.left-container {
-    float: left;
-    border-style: solid;
-    border-width: 3px;
-
-}
-
-.middle-container {
-    text-align: center;
-
-    }
-    
-
-.right-container {
-    float: right;
-    border-style: solid;
-    border-width: 3px;
-
 }
