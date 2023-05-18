@@ -12,6 +12,7 @@ const path = require('path')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
 var fs = require('fs');
+const { json } = require('body-parser');
 
 //  _____ ______ _______ _______ _____ _   _  _____  _____ 
 ///  ____|  ____|__   __|__   __|_   _| \ | |/ ____|/ ____|
@@ -30,7 +31,11 @@ var port = 1010
 var ip = '127.0.0.1' //I don't know why this is here or if we need it. 
 //listen server
 app.listen(port, function () {
-  console.log("enter your browser and enter localhost:" + port + " in the URL bar")
+  console.log("Listening on port " + port)
+
+
+  convertExcelFileToJsonUsingXlsx('excel_Sheets/shops.xlsx', 'data.json') //this could likely be done in a function or something that allows pages to get updated and lets the server run continuously 
+  //convertExcelFileToJsonUsingXlsx('testData.xlsx', 'testData.json')
 })
 
 // __  __          _____       _____        _____ ______ 
@@ -79,21 +84,22 @@ function fetchGeoJson(relationId) {
   });
 }
 
-
-app.get('/', async (req, res) => {
+// Define a route to handle '/districts' requests
+app.get('/districts', async (req, res) => {
   try {
-    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7] = await Promise.all([ //Add any new osm relation here
-      //Add any new osm relation here
-      fetchGeoJson(417442), //York County
-      fetchGeoJson(15798307), //York City School District
-      fetchGeoJson(15798797), //York Suburban School District
-      fetchGeoJson(15805026), //West York Area School District
-      fetchGeoJson(15806951), //Central york School District
-      fetchGeoJson(15807383), //Dallastown Area School District
-      fetchGeoJson(15831564), //Spring Grove Area School District
+    // Fetch the GeoJSON data for multiple OSM relation IDs in parallel using Promise.all
+    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7] = await Promise.all([
+      fetchGeoJson(417442), // York County
+      fetchGeoJson(15798307), // York City School District
+      fetchGeoJson(15798797), // York Suburban School District
+      fetchGeoJson(15805026), // West York Area School District
+      fetchGeoJson(15806951), // Central York School District
+      fetchGeoJson(15807383), // Dallastown Area School District
+      fetchGeoJson(15831564), // Spring Grove Area School District
     ]);
 
-    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7});//Add any new osm relation here
+    // Render the 'districtmap' view with the fetched GeoJSON data
+    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7 });
   } catch (err) {
     console.error(err);
     res.status(500).send('An error occurred');
