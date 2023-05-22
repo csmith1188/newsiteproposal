@@ -4,20 +4,68 @@
 <link rel="stylesheet" href="styles.css">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Template</title>
+    <title><%- pageTitle -%></title>
 </head>
 <body>
 
+
+<div class="container">
     <div class="left-container">
-        <h1>i love mr smith</h1>
-    </div>
-    <div class="right-container">
         <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>mr smith looks up to  Ōten Shimokawa</h1>
+
+
     </div>
     <div class="middle-container">
-        <h1>mr smith is love mr smith is life</h1>
-        
+    <div class="text-container">
+        <h1 class="Temph1"><%- pageTitle -%></h1>
+            
+            <!-- <div id="tempVideo"> -->
+            
+            </div>
+        <%- pageInfo -%>
     </div>
+    
+    <div class="right-container">
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>csmith@ilovehotmen.com</h1>
+        <h1>mr smith looks up to  Ōten Shimokawa</h1>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+<script>
+    const videoDiv = document.getElementById("tempVideo")
+    const node = document.createElement('video')
+    const sourceVid = document.createElement('source')
+    const vidPath = <%- JSON.stringify(pageVideo) %>
+
+    if (vidPath.toLowerCase != "null") {
+        setAttributes(node, {"controls": "controls"})
+        setAttributes(sourceVid, {"src": vidPath, "type": "video/mp4"})
+        node.appendChild(sourceVid)
+        videoDiv.appendChild(node)
+    }
+
+    function setAttributes(el, attrs) {
+        Object.keys(attrs).forEach(key => el.setAttribute(key, attrs[key]));
+    }
+</script>
 </body>
 <%- include('partials/_footer') -%>
 </html>

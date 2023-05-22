@@ -170,9 +170,25 @@ function generateJSONFile(data, sendTo) {
  * Process the parsed data to render shop templates.
  */
 function shopTemps() {
+
+    const rawData = fs.readFileSync('data.json', 'utf8');
+    let words = JSON.parse(rawData)
+    for (let i = 0; i < words.length; i++) {
+        let pageData = words[i]
+        
+        app.get(`${pageData["Endpoint"]}`, function (req,res) {
+            res.render('template.ejs', {
+                pageTitle: pageData["Page Header"],
+                pageInfo: pageData["Page Text"],
+                pageVideo: pageData["Page Video"]
+            })
+        })
+    }
+
   // Read the JSON file containing the parsed data
   const rawData = fs.readFileSync('data.json', 'utf8');
   let words = JSON.parse(rawData);
+
 
   // Iterate over each item in the parsed data
   for (let i = 0; i < words.length; i++) {
@@ -256,6 +272,7 @@ app.get('/calander', function(req,res){
   res.render('calander.ejs')
 })
 
+//this is a template page for testing purposes it may scar you when you go to the template page though
 app.get('/template', function(req,res){
   res.render('template.ejs')
 })
