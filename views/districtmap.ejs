@@ -163,6 +163,24 @@ if (geojson7) {
     }
   }).addTo(map);
 }
+
+// Add the GeoJSON layer for Red Lion Area School District
+let geojson8;
+try {
+  geojson8 = JSON.parse('<%- JSON.stringify(geojson8) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson8) {
+  L.geoJSON(geojson8, {
+    style: function(feature) {
+      return {
+        color: '#fecd30', // yellow outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
     </script>
 </body>
 <%- include('partials/_footer') -%>
