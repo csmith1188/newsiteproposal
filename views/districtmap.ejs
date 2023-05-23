@@ -11,9 +11,33 @@
 <body>
     <div id="map" style="height: 800px;"></div>
     <script>
-const map = L.map('map').setView([39.9601662, -76.717791], 10);
+const map = L.map('map', {
+  minZoom: 7, // Set the minimum zoom level to 5
+  maxBounds: L.latLngBounds(
+    L.latLng(39.2868132,-80.5645942), // Southwest bound
+    L.latLng(43.667105, -70.2939151) // Northeast bound
+  )
+}).setView([39.9601662, -76.717791], 10);
+
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
+//attribution
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://ytech.edu">York County School of Technology</a>, Trey Floto'
+}).addTo(map);
+
+//york tech popup
+var marker = L.marker([39.9302254,-76.6869776]).addTo(map)
+    .bindPopup("York County School of Technology")
+    .openPopup();
+/*
+var popup = L.popup()
+    .setLatLng([39.9302254,-76.6869776])
+    .setContent("York County School of Technology")
+    .openOn(map);
+*/
 // Add the York County GeoJSON layer for York County
 let geojson1;
 try {
@@ -116,6 +140,42 @@ if (geojson6) {
     style: function(feature) {
       return {
         color: '#072a79', // blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Spring Gove Area School District
+let geojson7;
+try {
+  geojson7 = JSON.parse('<%- JSON.stringify(geojson7) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson7) {
+  L.geoJSON(geojson7, {
+    style: function(feature) {
+      return {
+        color: '#003087', // blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Red Lion Area School District
+let geojson8;
+try {
+  geojson8 = JSON.parse('<%- JSON.stringify(geojson8) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson8) {
+  L.geoJSON(geojson8, {
+    style: function(feature) {
+      return {
+        color: '#fecd30', // yellow outline
         weight: 3 // 3-pixel outline width
       };
     }
