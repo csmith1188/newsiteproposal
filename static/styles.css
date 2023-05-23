@@ -264,7 +264,7 @@ footer a {
   body {
     font-family: Verdana, sans-serif;
   }
-  /*Slides*/
+
   .mySlides {
     display: none;
     height: x;
@@ -282,7 +282,7 @@ footer a {
     left: 750px;
   }
 
-  /* Arrows on buttons */
+
   .prev,
   .next {
     cursor: pointer;
@@ -301,13 +301,13 @@ footer a {
     background-color: #1b1b1b;
   }
 
-  /*Next button*/
+
   .next {
     right: 750px;
     border-radius: 3px 0 0 3px;
   }
 
-  /*Previous button*/
+
   .prev {
     left: 45px;
     border-radius: 3px 0 0 3px;
@@ -318,7 +318,6 @@ footer a {
   .dot:hover {
     background-color: #004d0a;
   }
-
 
   .text {
     color: #f2f2f2;
@@ -368,7 +367,7 @@ footer a {
       font-size: 11px
     }
   }
-
+/* end slideshow css */
 
 /*District Map CSS*/
 
@@ -391,8 +390,10 @@ footer a {
     }
 }
 
-/* background video */
-.video-background { 
+
+/* background video css */
+.video-container { 
+
     position: relative;
     overflow: hidden;
     display: flex;
@@ -459,13 +460,17 @@ video {
         z-index:-1;
     }
 }
+/* end background video css */
 
-/* Athletics Page */
+
+/* Athletics Page Css*/
 
 .sports-container {
+    display: block;
     position: relative;
     justify-content: center;
     align-items: center;
+    /* font-size: 100%; */
     top: 0;
     z-index: 1;
     margin: 1%;
@@ -475,14 +480,32 @@ video {
     position: relative;
     justify-content: center;
     text-align: center;
-    font-size: 110%;
+    font-size: 95%;
     top: 15%;
-    width: 24%;
+    max-width: 80%;
+
     height: auto;
     margin: auto;
     margin-top: 2%;
     margin-bottom: 2%;
     overflow: auto;
+}
+
+#sportsTitle {
+    font-size: 225%;
+}
+
+.sports-sections {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 1.5%;
+    height: auto;
+    margin: auto;
+    font-size: 95%;
+    width: 45%;
+    height: auto;
 }
 
 .divider {
@@ -496,36 +519,66 @@ video {
     height: auto;
     max-width: 30%;
     width: 25%;
+
     top: 15%;
-    padding: 2%;
+    padding: 1.5%;
     margin-bottom: -2%;
 }
 
 .mini-divider {
     position: relative;
     align-self: center;
-    border-top: 2px solid rgb(167, 167, 167);
+    border-top: 1.5px solid rgb(99, 99, 99);
     border-bottom: none;
     border-left: none;
     border-right: none;
     margin: auto;
     height: auto;
-    max-width: 20%;
-    width: 15%;
+    width: 25%;
     padding: 2%;
     margin-bottom: -4%;
     margin-top: 1%;
 }
 
-.sports-sections {
+.vertical-divider {
+    border-left: 1.5px dotted rgb(167, 167, 167);
+    width: auto;
+    height: auto;
+}
+
+.admission {
+    display: flex;
+    justify-content: center;
+    margin-right: 1%;
+    margin-bottom: 3%;
+}
+
+#gamePrices {
+    margin: 1%;
+}
+
+#physicals {
     position: relative;
     justify-content: center;
     text-align: center;
     justify-content: center;
-    padding-bottom: 2%;
+    padding-bottom: 1.5%;
     height: auto;
     margin: auto;
-    font-size: 115%;
+    font-size: 100%;
+    height: auto;
+    width: 75%;
+}
+
+/* bottom of page */
+.asterisk {
+    font-weight: bold;
+    font-style: italic;
+    color: #696969;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    bottom: 2%;
 }
 
 /* Athletics page mobile */
@@ -537,47 +590,80 @@ video {
 
     .athletics-summary {
         overflow: auto;
-        font-size: 85%;
-        width: 40%;
+        font-size: 95%;
         height: auto;
         margin: auto;
-
+        max-width: 75%;
         margin-bottom: 3%;
     }
 
     .divider {
-        margin:auto;
+        margin: auto;
         height: auto;
-        max-width: 60%;
-        width: 50%;
+        max-width: 70%;
+        width: 60%;
     }
 
     .mini-divider {
-        margin:auto;
+        margin: auto;
         height: auto;
-        max-width: 60%;
-        width: 30%;
+        max-width: 70%;
+        width: 60%;
+        border-top: 1.5px solid rgb(167, 167, 167);
+    }
+
+    .vertical-divider {
+        border-left: 2px dotted rgb(99, 99, 99);
+        height: auto;
     }
 
     .sports-sections {
         margin: auto;
         height: auto;
+        font-size: 100%;
+        padding-bottom: 2%;
+    }
+
+    .admission {
+        margin-left: 4%;
+        margin-bottom: 10%;
+    }
+
+    #gamePrices {
+        margin: 2%;
+    }
+
+    /* bottom of page */
+    .asterisk {
+        font-weight: lighter;
     }
 }
+/* end athletics page css */
+
 
 
 /* Template for pages CSS */
+.container{
+    display: flex;
+    justify-content: space-around;
+    }
 
 .left-container {
     float: left;
-    margin-left: 50px;
-}
+    border-style: solid;
+    border-width: 3px;
 
-.right-container {
-    float: right;
-    margin-right: 50px;
 }
 
 .middle-container {
-text-align: center;
+    text-align: center;
+
+    }
+    
+
+.right-container {
+    float: right;
+    border-style: solid;
+    border-width: 3px;
+
 }
