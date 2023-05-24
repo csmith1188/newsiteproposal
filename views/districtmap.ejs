@@ -32,6 +32,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var marker = L.marker([39.9302254,-76.6869776]).addTo(map)
     .bindPopup("York County School of Technology")
     .openPopup();
+
 /*
 var popup = L.popup()
     .setLatLng([39.9302254,-76.6869776])
@@ -70,6 +71,9 @@ if (geojson2) {
         color: '#ef7a2d', // orange outline
         weight: 3 // 3-pixel outline width
       };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("York City School District");
     }
   }).addTo(map);
 }
