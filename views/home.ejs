@@ -1,6 +1,7 @@
 <html>
 
 <%- include('partials/_header') -%>
+
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width" />
@@ -12,7 +13,7 @@
     <div class="video-container">
       <div id="video">
         <video muted="true" loop preload playsinline autoplay disablepictureinpicture>
-          <!-- template for video looks like this -> <source src="/videos/videoName.mp4" type="video/mp4"> -->
+          <!-- template for html video looks like this -> <source src="/videos/VIDEO-NAME.mp4" type="video/mp4"> -->
           <source src="/videos/mr_saia.mp4" type="video/mp4">
         </video>
       </div>
@@ -34,6 +35,7 @@
       </div>
 
     </div>
+
     <!-- Next and previous buttons -->
     <a class="prev" onclick="minusSlides()">❮</a>
     <a class="next" onclick="plusSlides()">❯</a>

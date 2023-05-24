@@ -9,32 +9,64 @@
 
 <body>
     <!-- The container in which the content of the page is in -->
+
     <div class="sports-container">
-        <!-- Top of the sports page summarizing the content of the page-->
+        <!-- Top of the sports page summarizing the content of the page -->
+
         <div class="athletics-summary">
-            <h1>Spartan Athletics</h1>
+            <h1 id="sportsTitle">Spartan Athletics</h1>
             <h4>Welcome to the Spartan Athletics Page. <br> Here you can find all sorts of information regarding sports at York Tech. </h4>
             <p>Principal: Mr. Andrew Loehwing</p>
             <p>Athletic Director: Rob Caruso</p>
-            <p>Assistant Athletic Director: Open <a href="https://www.ytech.edu/cms/One.aspx?portalId=20326321&pageId=20615379" target="_blank" rel="noopener noreferrer">Apply Here?</a></p>
+            <p>Assistant Athletic Director: Open 
+                <a href="https://www.ytech.edu/cms/One.aspx?portalId=20326321&pageId=20615379" target="_blank" rel="noopener noreferrer">Apply Here?</a>
+            </p>
         </div>
 
-        <!-- Between each "sports-section" of this page, there will be a "divider" to make it look nice-->
+        <!-- Between each "sports-section" of this page, there will be a "divider" to make it look nice -->
         <div class="divider"></div>
 
         <div class="sports-sections">
-        <!-- Important info section of sports page. Here is where all the important information anyone will need will be easily accessed. -->
-            <h2>Important Info</h2>
-            <h3>Calendar</h3>
-            The sports calendar can be viewed at the link below
-            <u><p><a href="https://ytechspartans.bigteams.com/main/calendar" target="_blank" rel="noopener noreferrer">Click Here</a></p></u>
+            <!-- Important info section of sports page. This is where all the important information about sports can be easily accessed. -->
 
-            <!-- mini-dividers are for sub-sections -->
+            <h2 id="sports-section-text">Important Info</h2>
+            <h3>Calendar</h3>
+            The sports calendar can be viewed at the link below.
+            <p><a href="https://ytechspartans.bigteams.com/main/calendar" target="_blank" rel="noopener noreferrer">Click Here</a></p>
+
+            <!-- mini-dividers are for sub-sections in the page -->
+            <div class="mini-divider"></div>
+
+            <div id="sub-section">
+                <h3>Sports Award Program Pictures</h3>
+                    Below is the link to the 2023 All Sports Awards Program. The pictures are free to look at and download.
+                    <br>
+                    <a href="https://drive.google.com/open?id=18aqzVK1PRfEeacCHt1mX6q-MMM_wQLM5&usp=drive_fs" target="_blank" rel="noopener noreferrer">Picture link</a>
+            </div>
+
+            <div class="mini-divider"></div>
+
+            <div id="sub-section">
+                <h3>Sports Physicals</h3>
+                On June 5th and August 1st from 6-8PM, we will be offering sports physicals to anyone who
+                wants to participate in a sport at York Tech or anyone who is already an athlete. 
+                <br>
+                All appointments on June 5th are free and appointments on August 1st are $15.
+                <br>
+                You can make your appointment <a href="https://www.signupgenius.com/go/10C0C4AABA828A1FBC07-york2" target="_blank" rel="noopener noreferrer">here</a>.
+                <br><br>
+                All physicals must be on the official <a href="/sports">PIAA CIPPE</a> form dated JUNE 1, 2023 or later  
+                to participate in sports for the 2023-2024 school year. These forms will be available 
+                on May 30, 2023 by using the link above or they may be picked up at the kiosk, high 
+                school office, or the attendance or transportation office.
+            </div>
+
             <div class="mini-divider"></div>
 
             <h3>Event Admission Prices</h3>
-            <!-- Admission for sports events -->
             <div class="admission">
+                <!-- Admission for sports events -->
+
                 <div id="gamePrices">
                     <h5>VARSITY: </h5> 
                     <p>Adults: $4.00 <br> Students (K-12): $2.00 </p>
@@ -43,7 +75,7 @@
                 <div class="vertical-divider"></div>
 
                 <div id="gamePrices">
-                    <h5>FRESHMAN (JV): </h5> 
+                    <h5>FRESHMAN (JH): </h5> 
                     <p> Adults: $2.00 <br> Students (K-12): $1.00</p>
                 </div>
 
@@ -54,25 +86,29 @@
                     <p>Senior Citizens: $2.00</p>
                 </div>
             </div>
-
         </div>
 
         <div class="divider"></div>
 
         <div class="sports-sections">
-        <!-- Sports announcements go here -->
-            <h2>Announcements</h2>
+
+            <!-- Sports announcements go here -->
+
+            <h2 id="sports-section-text">Announcements</h2>
 
             <h4>*Athlete of the week: Name </h4>
 
             <p>All sports announcements go here</p>
+
         </div>
 
         <div class="divider"></div>
 
+        <!-- Links to watch school sports -->>
         <div class="sports-sections">
-        <!-- Other less important info will go here -->
-            <h2>Other</h2>
+            <!-- Other less important info will go here -->
+         
+            <h2 id="sports-section-text">Other</h2>
             Here are the links to watch all Ytech Sports Games<br> <br>
             <a href="https://www.youtube.com/@ytechsports7949/featured" target="_blank" rel="noopener noreferrer">Home Games - Youtube</a><br>
             <a href="https://www.yaiaa.com/live-streams" target="_blank" rel="noopener noreferrer">Away Games - Yaiaa ?</a>
@@ -80,9 +116,15 @@
             <div class="mini-divider"></div>
 
             <h3>Campus Map</h3>
-            <p>The link to the campus map is 
-                <u><a href="http://www.ytech.edu/UserFiles/Servers/Server_20326237/File/Driving%20Directions%20&%20Campus%20Map.pdf" target="_blank" rel="noopener noreferrer">here</a></u>
-            </p>
+            The link to the campus map is 
+            <a href="http://www.ytech.edu/UserFiles/Servers/Server_20326237/File/Driving%20Directions%20&%20Campus%20Map.pdf" target="_blank" rel="noopener noreferrer">here</a>
+
+        </div>
+
+        <div class="mini-divider"></div>
+
+        <div id="sub-section">
+            <h2 style="color: rgb(153, 0, 0)">York Tech is a No Tobacco, Vaping, or Animal facility</h2>
         </div>
 
         <div class="asterisk">

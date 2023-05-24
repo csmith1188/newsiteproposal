@@ -88,7 +88,7 @@ function fetchGeoJson(relationId) {
 app.get('/districts', async (req, res) => {
   try {
     // Fetch the GeoJSON data for multiple OSM relation IDs in parallel using Promise.all
-    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7] = await Promise.all([
+    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7, geojson8] = await Promise.all([
       fetchGeoJson(417442), // York County
       fetchGeoJson(15798307), // York City School District
       fetchGeoJson(15798797), // York Suburban School District
@@ -96,10 +96,11 @@ app.get('/districts', async (req, res) => {
       fetchGeoJson(15806951), // Central York School District
       fetchGeoJson(15807383), // Dallastown Area School District
       fetchGeoJson(15831564), // Spring Grove Area School District
+      fetchGeoJson(15877595), // Red Lion Area School District
     ]);
 
     // Render the 'districtmap' view with the fetched GeoJSON data
-    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7 });
+    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7, geojson8 });
   } catch (err) {
     console.error(err);
     res.status(500).send('An error occurred');
@@ -186,7 +187,6 @@ function shopTemps() {
     }
 
   // Read the JSON file containing the parsed data
-
 
   // Iterate over each item in the parsed data
   for (let i = 0; i < words.length; i++) {
