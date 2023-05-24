@@ -187,6 +187,11 @@ function shopTemps() {
     }
 
   // Read the JSON file containing the parsed data
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 
   // Iterate over each item in the parsed data
   for (let i = 0; i < words.length; i++) {
