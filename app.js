@@ -186,9 +186,6 @@ function shopTemps() {
     }
 
   // Read the JSON file containing the parsed data
-  const rawData = fs.readFileSync('data.json', 'utf8');
-  let words = JSON.parse(rawData);
-
 
   // Iterate over each item in the parsed data
   for (let i = 0; i < words.length; i++) {

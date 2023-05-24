@@ -549,7 +549,7 @@ video {
     height: auto;
     margin: auto;
     font-size: 100%;
-    min-width: 35%;
+    min-width: 40%;
     max-width: 45%;
 }
 
@@ -626,7 +626,8 @@ video {
         height: auto;
         margin: auto;
         font-size: 90%;
-        min-width: 100%;
+        min-width: 80%;
+        max-width: 100%;
     }
 
     .admission {
